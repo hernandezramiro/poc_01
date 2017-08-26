@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include jQuery Mobile stylesheets --> 
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- Include the jQuery library -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
+</head>
+<body>
+
+<div data-role="page">
+
+  <div data-role="header">
+    <h1>Insert Page Title Here</h1>
+  </div>
+
+  <div class="ui-content">
+    
+    <div id="divContent">
+
+      <h3>
+        Impacto econ&oacute;mico de una plaga de moscas en establos lecheros
+      </h3>
+
+      <div id="divForm">
+          <label for="txtCowShed" onclick="clicExample();">Establo</label>
+          <input data-clear-btn="true" name="txtCowShed" id="txtCowShed" value="" type="text">
+        
+          <label for="txtNumCows">N&uacute;mero de vacas en producci&oacute;n</label>
+          <input data-clear-btn="true" name="txtNumCows" id="txtNumCows" value="" type="number">
+
+          <label for="txtCowsProduction">Producci&oacute;n vaca / d&iacute;a (l)</label>
+          <input data-clear-btn="true" name="txtCowsProduction" id="txtCowsProduction" value="" type="number">
+
+          <label for="txtPercentageDecrese">% de disminici&oacute;n (0-30)</label>
+          <input data-clear-btn="true" name="txtPercentageDecrese" id="txtPercentageDecrese" value="" type="number">
+
+          <label for="txtMilkPrice">Precio del litro de leche</label>
+          <input data-clear-btn="true" name="txtMilkPrice" id="txtMilkPrice" value="" type="number">
+
+          <label for="txtFlySeason">Temporada de moscas (d&iacute;as)</label>
+          <input data-clear-btn="true" name="txtFlySeason" id="txtFlySeason" value="" type="number">
+        
+      </div>
+
+    </div>
+
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>Insert Footer Text Here</h1>
+  </div>
+
+</div> 
+
+</body>
+</html>

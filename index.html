@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="code/css/jquery/jquery.mobile-1.4.5.min.css">
+    <script type="text/javascript" src="code/scripts/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="code/scripts/jquery/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="code/css/general/dairy.bayer.css">
+    <script src="code/scripts/greensock/easing/EasePack.min.js"></script>
+    <script src="code/scripts/greensock/TweenMax.min.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+        function loadHTML(htmlFile){
+            //pageHistory.push(auxHistory);
+            //$("#content").load(htmlFile);
+
+            //alert("htmlFile: " + htmlFile);
+
+            $('#content').load(htmlFile,function(){ 
+                $('#content').trigger('create'); 
+                $.getScript("code/scripts/greensock.templates/greensock.templates.js");
+            });
+
+            $("#myPanel").panel("close");
+            //auxHistory = htmlFile;
+            //console.log(pageHistory);
+        }
+
+        function back(){
+            //var fileName = pageHistory.pop();
+            $("#content").load(fileName);
+            $.getScript("scripts/" + fileName.replace("html", "js")); 
+            init();
+            $("#myPanel").panel("close");
+            //console.log(pageHistory);
+        }
+
+    </script>
+
+    <title>PoC Bayer</title>
+</head>
+
+<body id="body">
+
+    <div data-role="page">
+
+        <div data-role="panel" id="myPanel" data-display="overlay" data-theme="a">
+            <ul data-role="listview">
+                <li data-icon="home"><a href="#" data-rel="close"
+                    onclick="loadHTML('content/inicio/inicio.html #divContent');">Inicio</a></li>
+                <li data-role="list-divider">Contenidos</li>
+            </ul>
+
+            <div data-role="collapsibleset" data-inset="false">
+                <div data-role="collapsible">
+                    <h3>Tipos de moscas y su impacto en los establos lecheros</h3>
+                    <ol data-role="listview" data-inset="false">
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/impacto.economico.html #divContent');">Impacto económico de una plaga de moscas en un establo lechero (Hoja de cálculo)</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/especies.moscas.html #divContent');">Principales especies de mosca que afectan al ganado bovino</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/habitos.tipos.moscas.html #divContent');">Hábitos de los diferentes tipos de moscas</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/ciclo.vida.moscas.html #divContent');">Ciclo de vida de las moscas general</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/caracteristicas.ciclo.vida.moscas.html #divContent');">Características del ciclo de vida de los diferentes tipos de moscas</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/relacion.temperatura.ciclo.html #divContent');">Relación entre la temperatura y el ciclo de vida de las moscas</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/moscas.estacionalidad.html #divContent');">Estacionalidad de las moscas</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/capacidad.reproductiva.html #divContent');">Capacidad reproductiva de los diferentes tipos de mosca (Hoja de cálculo)</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/piramide.poblacional.html #divContent');">Pirámide poblacional de las diferentes etapas de las moscas</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/tipos.mosquicidas.html #divContent');">Tipos de mosquicida por etapa de desarrollo de las moscas</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/adulticidas.quimicos.html #divContent');">Adulticidas químicos. Vías de aplicación</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/adulticidas.sustancias.activas.html #divContent');">Adulticidas químicos. Sustancias activas</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/adulticidas.fisicos.html #divContent');">Adulticidas físicos</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/pupicida.biologico.html #divContent');">Pupicida biológico</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/pupicida.larvicida.cultural.html #divContent');">Pupicida y Larvicida cultural</a></li>
+                        <li><a href="#">Larvicida químico</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/tipos/importancia.escarabajo.html #divContent');">Importancia del Escarabajo estercolero</a></li>
+                    </ol>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Programas de control de moscas en establos lecheros</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li>Acura</li>
+                        <li>Audi</li>
+                        <li>BMW</li>
+                        <li>Cadillac</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Productos Bayer para el control de moscas en establos lecheros</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/bayofly.html #divContent')">Bayofly</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/bayofly.ippa.html #divContent')">Bayofly IPPA</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/bayofly.plus.ippa.html #divContent')">Bayofly Plus IPPA</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/baycidal.html #divContent')">Baycidal</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/baycidal.ippa.html #divContent')">Baycidal IPPA</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/rabon.97.3.html #divContent')">Rabon 97.3</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/rabon.97.3.ippa.html #divContent')">Rabon 97.3 IPPA</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/quickbayt.html #divContent')">QuickBayt</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/quickbayt.ippa.html #divContent')">QuickBayt IPPA</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Material adicional</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li><a href="#" onclick="loadHTML('content/moscas/material.adicional/flies.milk.production.html #divContent')">Milk Production loss</a></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Posicionamientos y mensajes clave</h3>
+                    <ul data-role="listview" data-inset="false">
+                        <li>Earth</li>
+                        <li>Jupiter</li>
+                        <li>Mars</li>
+                        <li>Mercury</li>
+                    </ul>
+                </div>
+            </div>
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
+            </ul>
+        </div>
+
+        <div data-role="header">
+            <h1>Header Text</h1>
+            <a href="#myPanel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Menu</a>
+            <a href="#" data-icon="arrow-l" data-iconpos="notext" data-shadow="false" data-iconshadow="false" onclick="back()">Atrás</a>
+        </div>
+        
+        <div data-role="main" class="ui-content" id="content">
+            <div>
+                <img src="./images/inicio/inicio.png">
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h1>Footer Text</h1>
+        </div>
+
+    </div>
+
+</body>
+</html>

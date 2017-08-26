@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include jQuery Mobile stylesheets --> 
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- Include the jQuery library -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
+</head>
+<body>
+
+<div data-role="page">
+
+  <div data-role="header">
+    <h1>Insert Page Title Here</h1>
+  </div>
+
+  <div class="ui-content">
+
+    <div class="div_caracteristicas_ciclo_vida_moscas" id="divContent">
+
+    <h1 class="h1_caracteristicas_ciclo_vida_moscas">Características del ciclo de vida de los diferentes tipos de moscas</h1>
+
+    <table class="table_caracteristicas_ciclo_vida_moscas">
+
+      <tr>
+        <th></th>
+        <th>Mosca doméstica<br>(Musca domestica)</th>
+        <th>Mosca del establo<br>(Stomoxys calcitrans)</th>
+        <th>Mosca del cuerno<br>(Haematobia irritans)</th>
+        <th>Mosca de la cara<br>(Musca automnalis)</th>
+      </tr>
+      
+      <tr>
+        <td>Inicio de ovoposición</td>
+        <td>5-7 días después de la emergencia</td>
+        <td>4-5 días después de la emergencia</td>
+        <td>6-9 días después de la emergencia</td>
+        <td>3-5 días después de la emergencia</td>
+      </tr>
+      
+      <tr>
+        <td># de huevos por postura</td>
+        <td>75-150</td>
+        <td>20-40</td>
+        <td>25-50</td>
+        <td>6-25</td>
+      </tr>
+      
+      <tr>
+        <td># de huevos totales</td>
+        <td>300-500</td>
+        <td>360-400</td>
+        <td>600-800</td>
+        <td>100-200</td>
+      </tr>
+      
+      <tr>
+        <td>Tiempo de eclosión</td>
+        <td>8-20 horas</td>
+        <td>18-24 horas</td>
+        <td>2-4 días</td>
+        <td>16-18 horas</td>
+      </tr>
+
+      <tr>
+        <td>Etapa de larva</td>
+        <td>2-6 días</td>
+        <td>4-8 días</td>
+        <td>14-24 días</td>
+        <td>3-5 días</td>
+      </tr>
+      
+      <tr>
+        <td>Etapa de pupa</td>
+        <td>3-6 días</td>
+        <td>3-4 días</td>
+        <td>6-9 días</td>
+        <td>8-10 días</td>
+      </tr>
+
+      <tr>
+        <td>Ciclo</td>
+        <td>10-20 días</td>
+        <td>12-18 días</td>
+        <td>28-46 días</td>
+        <td>15-21 días</td>
+      </tr>
+
+      <tr>
+        <td>Tiempo de vida</td>
+        <td>42-56 días</td>
+        <td>10-21 días</td>
+        <td>21-28 días</td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td colspan="2"><img src="images/moscas/tipos/caracteristicas.ciclo.vida.moscas.1.png"></td>
+        <td colspan="2"><img src="images/moscas/tipos/caracteristicas.ciclo.vida.moscas.2.png"></td>
+        <td><img src="images/moscas/tipos/caracteristicas.ciclo.vida.moscas.3.png"></td>
+      </tr>
+
+    </table>
+
+  </div>
+    
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+    <h1>Insert Footer Text Here</h1>
+  </div>
+
+</div> 
+
+</body>
+</html>
