@@ -324,7 +324,7 @@ body, html {
 @media only screen and (min-width: 1024px) {
 
     #internalDiv {
-        padding: 30px;
+        padding: 80px;
     }
 
       /**
@@ -396,9 +396,10 @@ body, html {
     background-clip: padding-box;
     text-align: center;
     position: absolute;
-    transform: rotate(150deg) translate(-50em) rotate(-150deg) translate(-38em);
-    height: 250px;
+    transform: rotate(150deg) translate(-50em) rotate(-150deg) translate(-44em);
+    height: 400px;
     overflow-y: auto;
+    top: 65%;
   }
 
   .modal-header {
@@ -540,7 +541,7 @@ body, html {
         transform: rotate(150deg) translate(-50em) rotate(-150deg) translate(-44em);
         height: 400px;
         overflow-y: auto;
-        top: 76%;
+        top: 65%;
       }
     
       .modal-header {
