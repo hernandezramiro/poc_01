@@ -37,7 +37,24 @@
             //console.log(pageHistory);
         }
 
+        function openIppaAttribute(){
+            $('#boxModal').css('display', 'block');
+        }
+
+        function closeIppaAttribute(){
+            $('#myModal').css('display', 'none');
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            var modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
     </script>
+
 
     <title>PoC Bayer</title>
 </head>
@@ -97,6 +114,7 @@
                         <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/rabon.97.3.ippa.html #divContent')">Rabon 97.3 IPPA</a></li>
                         <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/quickbayt.html #divContent')">QuickBayt</a></li>
                         <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/quickbayt.ippa.html #divContent')">QuickBayt IPPA</a></li>
+                        <li><a href="#" onclick="loadHTML('content/moscas/productos.bayer/propuesta.ippa.html #divContent')">Propuesta IPPA</a></li>
                     </ul>
                 </div>
                 <div data-role="collapsible">
