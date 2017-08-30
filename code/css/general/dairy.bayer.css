@@ -413,7 +413,7 @@ body, html {
     background-clip: padding-box;
     text-align: center;
     position: absolute;
-    transform: rotate(150deg) translate(-48em) rotate(-150deg) translate(35.5em);
+    transform: rotate(150deg) translate(-49em) rotate(-150deg) translate(6em);
     height: 400px;
     overflow-y: auto;
     top: 65%;
