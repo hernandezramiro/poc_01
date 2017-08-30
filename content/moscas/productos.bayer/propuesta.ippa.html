@@ -15,48 +15,25 @@
       <div id="divContent">
 
         <div id="internalDiv">
-
-        <div class='circle-container'>
-          <a href='#' class='center'><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg0' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg36' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg72' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg108' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg144' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg180' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg216' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg252' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg288' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
-          <a href='#' class='deg324' onclick="openIppaAttribute()"><img src='images/bayer.logo.png' /></a>
+          <div class='circle-container'>
+            <a href='#' class='center'><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg0' onclick="openIppaAttribute('boxModal1')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg36' onclick="openIppaAttribute('boxModal2')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg72' onclick="openIppaAttribute('boxModal3')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg108' onclick="openIppaAttribute('boxModal4')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg144' onclick="openIppaAttribute('boxModal5')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg180' onclick="openIppaAttribute('boxModal6')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg216' onclick="openIppaAttribute('boxModal7')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg252' onclick="openIppaAttribute('boxModal8')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg288' onclick="openIppaAttribute('boxModal9')"><img src='images/bayer.logo.png' /></a>
+            <a href='#' class='deg324' onclick="openIppaAttribute('boxModal10')"><img src='images/bayer.logo.png' /></a>
+          </div>
         </div>
 
-        <!-- The Modal -->
-        <!--<div id="myModal" class="modal">-->
-            <!-- Modal content -->
-            <!--<div class="modal-content">
-              <div class="modal-header">
-                <span class="close" onclick="closeIppaAttribute()">&times;</span>
-                <h2>Modal Header</h2>
-              </div>
-              <div class="modal-body">
-                <p>Some text in the Modal Body</p>
-                <p>Some other text...</p>
-              </div>
-              <div class="modal-footer">
-                <h3>Modal Footer</h3>
-              </div>
-            </div>
-          </div>-->
-
-          
-
-
-        </div>
-
-        <div class="boxModal" id="boxModal">
+        <div class="boxModalRight" id="boxModal1">
           <div class="modal-header">
-            <span class="close" onclick="closeIppaAttribute()">&times;</span>
-            <h2>Modal Header</h2>
+            <span class="close" onclick="closeIppaAttribute('boxModal1')">&times;</span>
+            <h2>Modal Header 1</h2>
           </div>
           <div class="modal-header-content">
             <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
@@ -69,9 +46,160 @@
             <p>some text here</p>
             <p>some text here</p>
           </div>
-          
         </div>
-        
+        <div class="boxModalRight" id="boxModal2">
+            <div class="modal-header">
+              <span class="close" onclick="closeIppaAttribute('boxModal2')">&times;</span>
+              <h2>Modal Header 2</h2>
+            </div>
+            <div class="modal-header-content">
+              <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+            </div>
+          </div>
+          <div class="boxModalRight" id="boxModal3">
+            <div class="modal-header">
+              <span class="close" onclick="closeIppaAttribute('boxModal3')">&times;</span>
+              <h2>Modal Header 3</h2>
+            </div>
+            <div class="modal-header-content">
+              <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+              <p>some text here</p>
+            </div>
+          </div>
+          <div class="boxModalLeft" id="boxModal4">
+              <div class="modal-header">
+                <span class="close" onclick="closeIppaAttribute('boxModal4')">&times;</span>
+                <h2>Modal Header 4</h2>
+              </div>
+              <div class="modal-header-content">
+                <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+                <p>some text here</p>
+                <p>some text here</p>
+                <p>some text here</p>
+                <p>some text here</p>
+                <p>some text here</p>
+                <p>some text here</p>
+                <p>some text here</p>
+                <p>some text here</p>
+              </div>
+            </div>
+            <div class="boxModalLeft" id="boxModal5">
+                <div class="modal-header">
+                  <span class="close" onclick="closeIppaAttribute('boxModal5')">&times;</span>
+                  <h2>Modal Header 5</h2>
+                </div>
+                <div class="modal-header-content">
+                  <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+                  <p>some text here</p>
+                  <p>some text here</p>
+                  <p>some text here</p>
+                  <p>some text here</p>
+                  <p>some text here</p>
+                  <p>some text here</p>
+                  <p>some text here</p>
+                  <p>some text here</p>
+                </div>
+              </div>
+              <div class="boxModalLeft" id="boxModal6">
+                  <div class="modal-header">
+                    <span class="close" onclick="closeIppaAttribute('boxModal6')">&times;</span>
+                    <h2>Modal Header 6</h2>
+                  </div>
+                  <div class="modal-header-content">
+                    <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+                    <p>some text here</p>
+                    <p>some text here</p>
+                    <p>some text here</p>
+                    <p>some text here</p>
+                    <p>some text here</p>
+                    <p>some text here</p>
+                    <p>some text here</p>
+                    <p>some text here</p>
+                  </div>
+                </div>
+                <div class="boxModalLeft" id="boxModal7">
+                    <div class="modal-header">
+                      <span class="close" onclick="closeIppaAttribute('boxModal7')">&times;</span>
+                      <h2>Modal Header 7</h2>
+                    </div>
+                    <div class="modal-header-content">
+                      <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+                      <p>some text here</p>
+                      <p>some text here</p>
+                      <p>some text here</p>
+                      <p>some text here</p>
+                      <p>some text here</p>
+                      <p>some text here</p>
+                      <p>some text here</p>
+                      <p>some text here</p>
+                    </div>
+                  </div>
+                  <div class="boxModalLeft" id="boxModal8">
+                      <div class="modal-header">
+                        <span class="close" onclick="closeIppaAttribute('boxModal8')">&times;</span>
+                        <h2>Modal Header 8</h2>
+                      </div>
+                      <div class="modal-header-content">
+                        <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+                        <p>some text here</p>
+                        <p>some text here</p>
+                        <p>some text here</p>
+                        <p>some text here</p>
+                        <p>some text here</p>
+                        <p>some text here</p>
+                        <p>some text here</p>
+                        <p>some text here</p>
+                      </div>
+                    </div>
+                    <div class="boxModalRight" id="boxModal9">
+                        <div class="modal-header">
+                          <span class="close" onclick="closeIppaAttribute('boxModal9')">&times;</span>
+                          <h2>Modal Header 9</h2>
+                        </div>
+                        <div class="modal-header-content">
+                          <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+                          <p>some text here</p>
+                          <p>some text here</p>
+                          <p>some text here</p>
+                          <p>some text here</p>
+                          <p>some text here</p>
+                          <p>some text here</p>
+                          <p>some text here</p>
+                          <p>some text here</p>
+                        </div>
+                      </div>
+                      <div class="boxModalRight" id="boxModal10">
+                          <div class="modal-header">
+                            <span class="close" onclick="closeIppaAttribute('boxModal10')">&times;</span>
+                            <h2>Modal Header 10</h2>
+                          </div>
+                          <div class="modal-header-content">
+                            <p>some text here some text here some text here some text here some text here some text here some text here some text here some text here this ends</p>
+                            <p>some text here</p>
+                            <p>some text here</p>
+                            <p>some text here</p>
+                            <p>some text here</p>
+                            <p>some text here</p>
+                            <p>some text here</p>
+                            <p>some text here</p>
+                            <p>some text here</p>
+                          </div>
+                        </div>
 
       </div>
     </div>

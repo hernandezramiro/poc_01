@@ -385,7 +385,7 @@ body, html {
 /***********************************************/
 
 
-.boxModal {
+.boxModalLeft {
     display: none;
     width: 20%;
     margin: 0 auto;
@@ -397,6 +397,23 @@ body, html {
     text-align: center;
     position: absolute;
     transform: rotate(150deg) translate(-50em) rotate(-150deg) translate(-44em);
+    height: 400px;
+    overflow-y: auto;
+    top: 65%;
+  }
+
+  .boxModalRight {
+    display: none;
+    width: 20%;
+    margin: 0 auto;
+    background: rgba(87,87,87,0.45);
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 20px/10px;
+    background-clip: padding-box;
+    text-align: center;
+    position: absolute;
+    transform: rotate(150deg) translate(-48em) rotate(-150deg) translate(35.5em);
     height: 400px;
     overflow-y: auto;
     top: 65%;
@@ -445,21 +462,6 @@ body, html {
     cursor: pointer;
 }
   
-  .button {
-    font-size: 1em;
-    padding: 10px;
-    color: #fff;
-    border: 2px solid #06D85E;
-    border-radius: 20px/50px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease-out;
-  }
-  .button:hover {
-    background: #06D85F;
-  }
-
-}
 
 
 
@@ -542,7 +544,7 @@ body, html {
         transform: rotate(150deg) translate(-50em) rotate(-150deg) translate(-44em);
         height: 400px;
         overflow-y: auto;
-        top: 65%;
+        top: 55%;
       }
     
       .modal-header {
@@ -605,5 +607,3 @@ body, html {
     
         
     }
-    
-
