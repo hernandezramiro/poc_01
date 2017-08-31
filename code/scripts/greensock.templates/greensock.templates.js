@@ -100,7 +100,7 @@ function openIppaAttribute(attributePopupId){
   }
 
   $(`#${attributePopupId}`).css('display', 'block');
-  TweenLite.fromTo(document.getElementById(attributePopupId), 0.5, {opacity:0, width: 0, height:0}, {opacity:1, width: "205px", height:"400px"});
+  TweenLite.fromTo(document.getElementById(attributePopupId), 0.5, {opacity:0, width: 0, height:0}, {opacity:1, width: "20%", height:"400px"});
 }
 
 function closeIppaAttribute(attributePopupId){
