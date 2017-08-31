@@ -82,3 +82,18 @@ $("#divContent").ready(function () {
       }, 0);
 });
 
+//$("#imgIppaAttribute").click(function (attributePopupId) {
+function openIppaAttribute(attributePopupId){
+  var inputs = document.getElementsByClassName("boxModal");
+  
+  for (var i = 0; i < inputs.length; i++) {
+      if(inputs[i].style.display == "block" ) {
+          $(`#${inputs[i].id}`).css('display', 'none');
+      }
+  }
+  
+  $(`#${attributePopupId}`).css('display', 'block');
+  //console.log(document.getElementById(attributePopupId));
+  TweenLite.from(document.getElementById(attributePopupId), 1.5, {opacity:0});
+}
+
