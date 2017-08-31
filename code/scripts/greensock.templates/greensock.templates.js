@@ -82,18 +82,50 @@ $("#divContent").ready(function () {
       }, 0);
 });
 
-//$("#imgIppaAttribute").click(function (attributePopupId) {
 function openIppaAttribute(attributePopupId){
-  var inputs = document.getElementsByClassName("boxModal");
+  var inputs = document.getElementsByClassName("boxModalLeft");
   
   for (var i = 0; i < inputs.length; i++) {
       if(inputs[i].style.display == "block" ) {
           $(`#${inputs[i].id}`).css('display', 'none');
       }
   }
+
+  var inputsRight = document.getElementsByClassName("boxModalRight");
   
+  for (var i = 0; i < inputsRight.length; i++) {
+      if(inputsRight[i].style.display == "block" ) {
+          $(`#${inputsRight[i].id}`).css('display', 'none');
+      }
+  }
+
   $(`#${attributePopupId}`).css('display', 'block');
-  //console.log(document.getElementById(attributePopupId));
-  TweenLite.from(document.getElementById(attributePopupId), 1.5, {opacity:0});
+  TweenLite.fromTo(document.getElementById(attributePopupId), 0.5, {opacity:0, width: 0, height:0}, {opacity:1, width: "205px", height:"400px"});
 }
 
+function closeIppaAttribute(attributePopupId){
+  TweenLite.to(document.getElementById(attributePopupId), 0.5, {opacity:0, width:0, height:0, onComplete:tweenComplete, onCompleteParams:[attributePopupId]});
+}
+
+window.onclick = function(event) {
+  
+    var inputs = document.getElementsByClassName("boxModalLeft");
+  
+    for (var i = 0; i < inputs.length; i++) {
+      if(inputs[i].style.display == "block" && event.target != inputs[i] && event.target.id != "ippaAttributeBtn") {
+        TweenLite.to(document.getElementById(inputs[i].id), 0.5, {opacity:0, width:0, height:0, onComplete:tweenComplete, onCompleteParams:[inputs[i].id]});
+      }
+    }
+    
+    var inputsRight = document.getElementsByClassName("boxModalRight");
+    
+    for (var i = 0; i < inputsRight.length; i++) {
+      if(inputsRight[i].style.display == "block" && event.target != inputsRight[i] && event.target.id != "ippaAttributeBtn") {
+        TweenLite.to(document.getElementById(inputsRight[i].id), 0.5, {opacity:0, width:0, height:0, onComplete:tweenComplete, onCompleteParams:[inputsRight[i].id]});
+      }
+    }
+  }
+  
+  function tweenComplete(attributePopupId){
+    $(`#${attributePopupId}`).css('display', 'none');
+  }

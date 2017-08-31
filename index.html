@@ -37,22 +37,6 @@
             //console.log(pageHistory);
         }
 
-        function openIppaAttribute(attributePopupId){
-            var inputs = document.getElementsByClassName("boxModal");
-            
-            for (var i = 0; i < inputs.length; i++) {
-                if(inputs[i].style.display == "block" ) {
-                    $(`#${inputs[i].id}`).css('display', 'none');
-                }
-            }
-
-            $(`#${attributePopupId}`).css('display', 'block');
-        }
-
-        function closeIppaAttribute(attributePopupId){
-            $(`#${attributePopupId}`).css('display', 'none');
-        }
-
         // When the user clicks anywhere outside of the modal, close it
         /*window.onclick = function(event) {
             var modal = document.getElementById('boxModal');
@@ -64,7 +48,7 @@
                 $('#boxModal').css('display', 'none');
             }
         }*/
-
+/*
         $(document).mouseup(function (e) {
             var popupLeft = $(".boxModalLeft");
             if (!popupLeft.is(e.target) && popupLeft.has(e.target).length == 0) {
@@ -77,7 +61,7 @@
             }
         });
 
-
+*/
         
 
     </script>
