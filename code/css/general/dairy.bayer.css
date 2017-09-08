@@ -643,7 +643,7 @@ PROPUESTA IPPA 02 - BEGINS
     text-indent: 1.5em;
     text-shadow: 0 0 .1em deeppink;
     transition: .7s; /* only works in Firefox */
-    content: attr(id);
+    content: attr(itemprop);
 }
 
 .circle-container-prop02 a:hover:before { opacity: 1; }
