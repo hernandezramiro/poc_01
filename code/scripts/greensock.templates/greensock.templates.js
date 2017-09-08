@@ -82,6 +82,8 @@ $("#divContent").ready(function () {
       }, 0);
 });
 
+
+////////////////////PROPOSAL ONE - BEGINS
 function openIppaAttribute(attributePopupId){
   var inputs = document.getElementsByClassName("boxModalLeft");
   
@@ -129,3 +131,110 @@ window.onclick = function(event) {
   function tweenComplete(attributePopupId){
     $(`#${attributePopupId}`).css('display', 'none');
   }
+
+////////////////////PROPOSAL ONE - ENDS
+
+////////////////////PROPOSAL TWO - BEGINS
+
+//instantiate a TimelineLite    
+var slideHistory = "ippaListItem-1";
+var position;
+var percentLeft;
+var auxPercentLeft = 0;
+
+function showIppaSlide(attributeSlideId, ippaAttributeBtnId){
+
+  if(attributeSlideId != slideHistory){
+
+    if(attributeSlideId === "ippaListItem-1")
+      TweenLite.set(document.getElementById(attributeSlideId), {clearProps:"xPercent", delay:1});
+    else
+      TweenLite.set(document.getElementById(attributeSlideId), {clearProps:"xPercent"});
+
+    position = $('#' + attributeSlideId).position();
+    percentLeft = position.left/$(window).width() * 100;
+    console.log("current position attributeSlideId", percentLeft);
+    percentLeft = percentLeft * -1;
+    console.log("current position attributeSlideId in negative", percentLeft);
+    
+    console.log(auxPercentLeft);
+
+    if(auxPercentLeft === -0)
+      auxPercentLeft = -100;
+
+    TweenLite.to(document.getElementById(slideHistory), 1, {xPercent: auxPercentLeft, force3D: true});
+    
+    auxPercentLeft = percentLeft - 100;
+
+    console.log("position to quit the current attribute", auxPercentLeft);
+    
+    if(attributeSlideId != "ippaListItem-1")
+      TweenLite.to(document.getElementById(attributeSlideId), 1, {xPercent: percentLeft, force3D: true});
+    slideHistory = attributeSlideId;
+
+    //To rotate the circle's elements
+
+    var ippaButton = document.getElementById(ippaAttributeBtnId);
+
+    var inputs = document.getElementsByClassName("ippaAttributeBtn");
+
+    for (var i = 0; i < inputs.length; i++) {
+      var currentDegree = inputs[i].getAttribute("itemid");
+
+      switch(ippaButton.title) {
+        case "toLeft-1":
+            (currentDegree == 342) ? currentDegree = Number(currentDegree) - Number(360) : currentDegree = currentDegree;
+            currentDegree = Number(currentDegree) + Number(36);
+          break;
+        case "toLeft-2":
+            (currentDegree == 342) ? currentDegree = Number(currentDegree) - Number(360) : currentDegree = currentDegree;
+            (currentDegree == 306) ? currentDegree = Number(currentDegree) - Number(360) : currentDegree = currentDegree;
+            currentDegree = Number(currentDegree) + Number(72);
+          break;
+        case "toRight-1":
+            (currentDegree == 18) ? currentDegree = Number(currentDegree) + Number(360) : currentDegree = currentDegree;
+            currentDegree = currentDegree - 36;
+          break;
+        case "toRight-2":
+            (currentDegree == 18) ? currentDegree = Number(currentDegree) + Number(360) : currentDegree = currentDegree;
+            (currentDegree == 54) ? currentDegree = Number(currentDegree) + Number(360) : currentDegree = currentDegree;
+            currentDegree = currentDegree - 72;
+          break;
+      }
+
+      inputs[i].style.transform = "rotate(" + currentDegree + "deg) translate(15em) rotate(-" + currentDegree + "deg)";
+      inputs[i].setAttribute("itemid", currentDegree);
+
+      switch(currentDegree) {
+        case 126:
+            inputs[i].setAttribute("title", "toRight-1");
+          break;
+        case 162:
+            inputs[i].setAttribute("title", "toRight-2");
+          break;
+        case 54:
+            inputs[i].setAttribute("title", "toLeft-1");
+          break;
+        case 18:
+            inputs[i].setAttribute("title", "toLeft-2");
+          break;
+      }
+    }
+
+    var inputsAux = document.getElementsByClassName("ippaAttributeBtn");
+
+    for (var i = 0; i < inputsAux.length; i++) {
+      var currentDegree = inputsAux[i].getAttribute("itemid");
+
+      if(currentDegree != 126 && currentDegree != 162 && currentDegree != 54 && currentDegree != 18){
+        inputsAux[i].setAttribute("title", "empty");
+      }
+    }
+  }
+}
+
+
+
+
+////////////////////PROPOSAL TWO - ENDS
+

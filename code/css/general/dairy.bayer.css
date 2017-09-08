@@ -1,8 +1,8 @@
 ﻿
-
+/*
 div {
     text-align: center;
-}
+}*/
 
 img{
     width:85%;
@@ -304,9 +304,9 @@ body, html {
 }
 
 
-/******************************************************************/
-
-
+/******************************************************************
+PROPUESTA IPPA 01 - BEGINS
+********************************************************************/
 
 @media only screen and (min-width: 1024px) {
     
@@ -581,3 +581,170 @@ body, html {
         cursor: pointer;
     }
 }
+
+/******************************************************************
+PROPUESTA IPPA 01 - ENDS
+********************************************************************/
+
+
+
+/******************************************************************
+PROPUESTA IPPA 02 - BEGINS
+********************************************************************/
+
+#internalDiv-prop02 {
+    transform: translate(0, -16em);
+}
+
+/**
+* Position icons into circle (SO)
+* http://stackoverflow.com/q/12813573/1397351
+*/
+.circle-container-prop02 {
+    position: relative;
+    width: 30em;
+    height: 30em;
+    border: dashed 1px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.circle-container-prop02 a {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 4em; height: 4em;
+    margin: -2em;
+}
+
+.circle-container-prop02 img { display: block; width: 100%; }
+.circle-container-prop02 .deg18 { transform: rotate(18deg) translate(15em) rotate(-18deg); }
+.circle-container-prop02 .deg54 { transform: rotate(54deg) translate(15em) rotate(-54deg); }
+.circle-container-prop02 .deg90 { transform: rotate(90deg) translate(15em) rotate(-90deg); }
+.circle-container-prop02 .deg126 { transform: rotate(126deg) translate(15em) rotate(-126deg); }
+.circle-container-prop02 .deg162 { transform: rotate(162deg) translate(15em) rotate(-162deg); }
+.circle-container-prop02 .deg198 { transform: rotate(198deg) translate(15em) rotate(-198deg); }
+.circle-container-prop02 .deg234 { transform: rotate(234deg) translate(15em) rotate(-234deg); }
+.circle-container-prop02 .deg270 { transform: rotate(270deg) translate(15em) rotate(-270deg); }
+.circle-container-prop02 .deg306 { transform: rotate(306deg) translate(15em) rotate(-306deg); }
+.circle-container-prop02 .deg342 { transform: rotate(342deg) translate(15em) rotate(-342deg); }
+
+/* this is just for showing the angle on hover */
+.circle-container-prop02 a:not(.center):before {
+    position: absolute;
+    width: 4em;
+    color: white;
+    opacity: 0;
+    background: rgba(0,0,0,.5);
+    font: 1.25em/3.45 Courier, monospace;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-indent: 1.5em;
+    text-shadow: 0 0 .1em deeppink;
+    transition: .7s; /* only works in Firefox */
+    content: attr(id);
+}
+
+.circle-container-prop02 a:hover:before { opacity: 1; }
+
+
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++styles for first intent for horizontal div slide
+.ippa-container-prop02 {
+    background-color: rgba(255, 0, 255, 0.2);
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+.ippa-container-prop02 {
+    -ms-overflow-style: none;  /*IE 10*/
+  /*  overflow: -moz-scrollbars-none;  /*Firefox*/
+/*}
+
+.ippa-container-prop02::-webkit-scrollbar {
+    display: none;  /*Safari and Chrome*/
+/*}
+
+.ippa-item-prop02 {
+    background-color: rgba(255, 0, 0, 0.2);
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}*/
+
+.internalDiv2 {
+    position:  inherit;
+    width: auto;
+    padding: 1em;
+}
+
+@media only screen and (max-width: 900px) {
+    .myNewList {
+        top: 30%;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) {
+    .myNewList {
+        top: 40%;
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    .myNewList {
+        top: 40%;
+    }
+}
+
+@media only screen and (min-height: 1500px) {
+    .myNewList {
+        top: 20%;
+    }
+}
+
+.myNewList {
+    list-style-type: none;
+    /*position: relative;*/
+    position: absolute;
+    /*top: 0;*/
+    /*top: 40%;*/
+    left: 0;
+    width: 100%;
+    /*height: 100vh;*/
+    height: 450px;
+
+    /*overflow: hidden;*/
+    display: flex;
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.myNewListItem {
+    flex: 0 0 auto;
+    width: 100vw;
+    height: 100%;
+    /*display: flex;*/
+    display: block;
+    align-items: center;
+    justify-content: center;
+
+    flex-flow: column;
+    position: relative; 
+}
+
+
+
+
+
+/******************************************************************
+PROPUESTA IPPA 02 - ENDS
+********************************************************************/
+
