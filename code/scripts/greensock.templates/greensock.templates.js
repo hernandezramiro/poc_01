@@ -172,7 +172,7 @@ function showIppaSlide(attributeSlideId, ippaAttributeBtnId){
       TweenLite.to(document.getElementById(attributeSlideId), 1, {xPercent: percentLeft, force3D: true});
     slideHistory = attributeSlideId;
 
-    //To rotate the circle's elements
+    //To rotate the circle's elements - Begins
 
     var ippaButton = document.getElementById(ippaAttributeBtnId);
 
@@ -202,7 +202,13 @@ function showIppaSlide(attributeSlideId, ippaAttributeBtnId){
           break;
       }
 
-      inputs[i].style.transform = "rotate(" + currentDegree + "deg) translate(15em) rotate(-" + currentDegree + "deg)";
+      //inputs[i].style.transform = "rotate(" + currentDegree + "deg) translate(15em) rotate(-" + currentDegree + "deg)";
+      //TweenLite.to(document.getElementById(inputs[i].id), 1, {rotation: "" + currentDegree + "deg"});
+      TweenLite.to(document.getElementById(inputs[i].id), 1, {transform: "rotate(" + currentDegree + "deg) translate(15em) rotate(-" + currentDegree + "deg)"});
+      
+
+
+      
       inputs[i].setAttribute("itemid", currentDegree);
 
       switch(currentDegree) {
@@ -230,6 +236,9 @@ function showIppaSlide(attributeSlideId, ippaAttributeBtnId){
         inputsAux[i].setAttribute("title", "empty");
       }
     }
+
+    //To rotate the circle's elements - Ends
+
   }
 }
 
