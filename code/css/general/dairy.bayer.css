@@ -165,12 +165,6 @@ table.table_caracteristicas_ciclo_vida_moscas img {
 *********Styles for tables 5************
 ***************************************/
 
-.th-groups th {
-    background-color: rgba(0,0,0,0.07);
-    border-right: 1px solid #fff;
-    text-align: center;
-}
-
 @media screen and (max-width: 64em) {
     /* Style the first cell in a row in a dark bar */
     .table_caracteristicas_ciclo th:first-child {
@@ -186,14 +180,6 @@ table.table_caracteristicas_ciclo_vida_moscas img {
     /* Hide the label in the first cell */
     .table_caracteristicas_ciclo th:first-child .ui-table-cell-label {
         display: none;
-    }
-    
-    /* Make the grouped header labels green */
-    .ui-table-reflow th .ui-table-cell-label-top,
-    .ui-table-reflow td .ui-table-cell-label-top {
-        font-weight: bold;
-        color: #319B47;
-        font-size: 1.1em;
     }
 }
 
@@ -648,36 +634,6 @@ PROPUESTA IPPA 02 - BEGINS
 
 .circle-container-prop02 a:hover:before { opacity: 1; }
 
-
-
-/*+++++++++++++++++++++++++++++++++++++++++++++++styles for first intent for horizontal div slide
-.ippa-container-prop02 {
-    background-color: rgba(255, 0, 255, 0.2);
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow-x: auto;
-    white-space: nowrap;
-    margin: 0 auto;
-}
-
-.ippa-container-prop02 {
-    -ms-overflow-style: none;  /*IE 10*/
-  /*  overflow: -moz-scrollbars-none;  /*Firefox*/
-/*}
-
-.ippa-container-prop02::-webkit-scrollbar {
-    display: none;  /*Safari and Chrome*/
-/*}
-
-.ippa-item-prop02 {
-    background-color: rgba(255, 0, 0, 0.2);
-    display: inline-block;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100%;
-}*/
-
 .internalDiv2 {
     position:  inherit;
     width: auto;
@@ -710,16 +666,10 @@ PROPUESTA IPPA 02 - BEGINS
 
 .myNewList {
     list-style-type: none;
-    /*position: relative;*/
     position: absolute;
-    /*top: 0;*/
-    /*top: 40%;*/
     left: 0;
     width: 100%;
-    /*height: 100vh;*/
     height: 450px;
-
-    /*overflow: hidden;*/
     display: flex;
     padding: 0;
     margin: 0;
@@ -731,20 +681,62 @@ PROPUESTA IPPA 02 - BEGINS
     flex: 0 0 auto;
     width: 100vw;
     height: 100%;
-    /*display: flex;*/
     display: block;
     align-items: center;
     justify-content: center;
-
     flex-flow: column;
     position: relative; 
 }
 
-
-
-
-
 /******************************************************************
 PROPUESTA IPPA 02 - ENDS
 ********************************************************************/
+
+
+/******************************************************************
+PROPUESTA IMG 01 - BEGINS
+********************************************************************/
+
+.prop_01_img_table {
+    background-color: white;
+}
+
+.prop_01_img {
+    width: 100%
+}
+
+#prop_01_img_div {
+    text-align: center;
+}
+
+
+/******************************************************************
+PROPUESTA IMG 01 - ENDS
+********************************************************************/
+
+/******************************************************************
+PROPUESTA IMG 02 - BEGINS
+********************************************************************/
+
+.prop_02_img_table {
+    background-color: white;
+}
+
+.prop_02_img {
+    width: 100%
+}
+
+#prop_02_img_div {
+    text-align: center;
+}
+
+#prop_02_img_01 {
+    position: relative;
+}
+
+
+/******************************************************************
+PROPUESTA IMG 02 - ENDS
+********************************************************************/
+
 
