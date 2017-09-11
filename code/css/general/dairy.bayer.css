@@ -171,7 +171,7 @@ table.table_caracteristicas_ciclo_vida_moscas img {
     text-align: center;
 }
 
-@media screen and (max-width: 72em) {
+@media screen and (max-width: 64em) {
     /* Style the first cell in a row in a dark bar */
     .table_caracteristicas_ciclo th:first-child {
         color: #fff;
@@ -198,7 +198,7 @@ table.table_caracteristicas_ciclo_vida_moscas img {
 }
 
 /* Media query to show as a standard table at wider widths, must be very wide for this table */
-@media screen and (min-width: 72em) {
+@media screen and (min-width: 64em) {
     /* Show the table header rows */
     .table_caracteristicas_ciclo td,
     .table_caracteristicas_ciclo th,
