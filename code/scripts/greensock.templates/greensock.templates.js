@@ -240,6 +240,8 @@ function showIppaSlide(attributeSlideId, ippaAttributeBtnId){
 
 ////////////////////PROPOSAL TWO - ENDS
 
+
+//IMG 01
 $("#divContent").ready(function () {
   var greensock_whole_image_01 = document.getElementById("prop_01_img_div");
   if(greensock_whole_image_01 != null) {
@@ -259,6 +261,7 @@ $("#divContent").ready(function () {
 
 /////////////////////////////////////
 
+//IMG 02
 $("#divContent").ready(function () {
 
   var greensock_whole_image_00 = document.getElementById("prop_02_img_div");
@@ -288,3 +291,127 @@ $("#divContent").ready(function () {
 
 });
 
+/////////////////////////////////////
+
+//IMG 03
+
+$("#divContent").ready(function () {
+  
+    var greensock_whole_image_00 = document.getElementById("prop_03_img_div_01");
+    if(greensock_whole_image_00 != null) {
+      TweenLite.fromTo(greensock_whole_image_00, 1, 
+        {
+          transform: "translate(50em)", 
+          opacity:0
+        }, 
+        {
+          transform: "translate(0em)", 
+          opacity:1, delay:1
+        });
+    }
+  
+    var greensock_whole_image_01 = document.getElementById("prop_03_img_01");
+    if(greensock_whole_image_01 != null) {
+      TweenLite.fromTo(greensock_whole_image_01, 1, {transform: "translateY(50em)", opacity:0}, {transform: "translateY(0em)", opacity:1});
+    }
+
+    var greensock_whole_image_02 = document.getElementById("prop_03_img_02");
+    if(greensock_whole_image_02 != null) {
+      TweenLite.fromTo(greensock_whole_image_02, 1, {transform: "translateY(-50em)", opacity:0}, {transform: "translateY(0em)", opacity:1});
+    }
+
+    var greensock_whole_image_03 = document.getElementById("prop_03_img_03");
+    if(greensock_whole_image_03 != null) {
+      TweenLite.fromTo(greensock_whole_image_03, 1, {transform: "translateY(50em)", opacity:0}, {transform: "translateY(0em)", opacity:1});
+    }
+
+    var greensock_whole_image_04 = document.getElementById("prop_03_img_04");
+    if(greensock_whole_image_04 != null) {
+      TweenLite.fromTo(greensock_whole_image_04, 1, {transform: "translateY(-50em)", opacity:0}, {transform: "translateY(0em)", opacity:1});
+    }
+  
+  
+  });
+
+  //IMG 04
+
+$("#divContent").ready(function () {
+  
+    var greensock_whole_image_00 = document.getElementById("prop_04_img_div_01");
+    if(greensock_whole_image_00 != null) {
+      TweenLite.fromTo(greensock_whole_image_00, 1, 
+        {
+          transform: "translate(50em)", 
+          opacity: 0
+        }, 
+        {
+          transform: "translate(0em)",
+          opacity: 1
+        });
+    }
+  
+    var greensock_whole_image_01 = document.getElementById("prop_04_img_01");
+    if(greensock_whole_image_01 != null) {
+      TweenLite.fromTo(greensock_whole_image_01, 1, {transform: "translate(-50em)", opacity:0}, {transform: "translate(0em)", opacity:1});
+    }
+
+    var greensock_whole_image_02 = document.getElementById("prop_04_img_02");
+    if(greensock_whole_image_02 != null) {
+      TweenLite.fromTo(greensock_whole_image_02, 1, {transform: "translate(50em)", opacity:0}, {transform: "translate(0em)", opacity:1});
+    }
+
+    var greensock_whole_image_03 = document.getElementById("prop_04_img_03");
+    if(greensock_whole_image_03 != null) {
+      TweenLite.fromTo(greensock_whole_image_03, 1, {transform: "translate(-50em)", opacity:0}, {transform: "translate(0em)", opacity:1});
+    }
+
+    var greensock_whole_image_04 = document.getElementById("prop_04_img_04");
+    if(greensock_whole_image_04 != null) {
+      TweenLite.fromTo(greensock_whole_image_04, 1, {transform: "translate(50em)", opacity:0}, {transform: "translate(0em)", opacity:1});
+    }
+  
+  
+  });
+
+  //IMG 05
+
+  $("#divContent").ready(function () {
+    
+      var greensock_whole_image_00 = document.getElementById("prop_05_img_div_01");
+      if(greensock_whole_image_00 != null) {
+        TweenLite.fromTo(greensock_whole_image_00, 1, 
+          {
+            transform: "translate(50em)", 
+            opacity: 0
+          }, 
+          {
+            transform: "translate(0em)",
+            opacity: 1,
+            delay: 1
+          });
+      }
+    
+      var greensock_whole_image_01 = document.getElementById("prop_05_img_01");
+      if(greensock_whole_image_01 != null) {
+        TweenLite.fromTo(greensock_whole_image_01, 1, {transform: "translate(-50em)", opacity:0}, {transform: "translate(0em)", opacity:1});
+      }
+  
+      var greensock_whole_image_02 = document.getElementById("prop_05_img_02");
+      if(greensock_whole_image_02 != null) {
+        TweenLite.fromTo(greensock_whole_image_02, 1, {transform: "translateY(-50em)", opacity:0}, {transform: "translateY(0em)", opacity:1});
+      }
+  
+      var greensock_whole_image_03 = document.getElementById("prop_05_img_03");
+      if(greensock_whole_image_03 != null) {
+        TweenLite.fromTo(greensock_whole_image_03, 1, {transform: "translateY(50em)", opacity:0}, {transform: "translateY(0em)", opacity:1});
+      }
+  
+      var greensock_whole_image_04 = document.getElementById("prop_05_img_04");
+      if(greensock_whole_image_04 != null) {
+        TweenLite.fromTo(greensock_whole_image_04, 1, {transform: "translate(50em)", opacity:0}, {transform: "translate(0em)", opacity:1});
+      }
+    
+    
+    });
+  
+  

@@ -730,13 +730,85 @@ PROPUESTA IMG 02 - BEGINS
     text-align: center;
 }
 
-#prop_02_img_01 {
-    position: relative;
-}
-
-
 /******************************************************************
 PROPUESTA IMG 02 - ENDS
 ********************************************************************/
 
 
+/******************************************************************
+PROPUESTA IMG 03 - BEGINS
+********************************************************************/
+
+.prop_03_img_table {
+    background-color: white;
+}
+
+.prop_03_img {
+    width: 100%;
+}
+
+#prop_03_img_div_01 {
+    text-align:center;
+}
+
+#prop_03_img_div_02 {
+    float: left;
+    position: relative;
+    width: 100%;
+    text-align:center;
+    display: inline-flex;
+}
+
+/******************************************************************
+PROPUESTA IMG 03 - ENDS
+********************************************************************/
+
+/******************************************************************
+PROPUESTA IMG 04 - BEGINS
+********************************************************************/
+
+.prop_04_img_table {
+    background-color: white;
+}
+
+.prop_04_img {
+    width: 100%;
+}
+
+#prop_04_img_div_01 {
+    text-align:center;
+}
+
+#prop_04_img_div_02 {
+    float: left;
+    position: relative;
+    width: 100%;
+    text-align:center;
+    display: inline-grid;
+}
+
+/******************************************************************
+PROPUESTA IMG 04 - ENDS
+********************************************************************/
+
+/******************************************************************
+PROPUESTA IMG 05 - BEGINS
+********************************************************************/
+
+.prop_05_img_table {
+    background-color: white;
+    border-spacing:0; /* Removes the cell spacing via CSS */
+    border-collapse: collapse;
+}
+
+.prop_05_img {
+    width: 100%;
+}
+
+#prop_05_img_div_01 {
+    text-align:center;
+}
+
+/******************************************************************
+PROPUESTA IMG 05 - ENDS
+********************************************************************/
