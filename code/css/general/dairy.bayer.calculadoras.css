@@ -1,0 +1,57 @@
+
+
+.numHeight {
+    max-width: 50px !important;
+}
+
+.numWidth {
+    max-width: 50px !important;
+}
+
+.numEqualInstallations {
+    max-width: 50px !important;
+}
+
+.numExtraTubos {
+    max-width: 50px !important;
+}
+
+
+.resultsTable {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    
+    table-layout:fixed;
+    /*padding-right:10px;*/
+}
+
+.resultsTable th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.resultsTable td, .resultsTable th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.resultsTable tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.resultsTable tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.lblReqInstallationType, .lblReqNumHeight, .lblReqNumWidth, .lblReqNumEqualInstallations, .lblReqNumExtraTubos {
+    color: red;
+    font-family: Calibri;
+    display: none;
+}
+
+.ui-disabled {
+    width: 20px;
+}

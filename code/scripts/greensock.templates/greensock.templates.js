@@ -153,6 +153,11 @@ function showIppaSlide(attributeSlideId, ippaAttributeBtnId){
 
     position = $('#' + attributeSlideId).position();
     percentLeft = position.left/$(window).width() * 100;
+
+    console.log("position", position);
+    console.log("window width", $(window).width());
+    
+
     console.log("current position attributeSlideId", percentLeft);
     percentLeft = percentLeft * -1;
     console.log("current position attributeSlideId in negative", percentLeft);
