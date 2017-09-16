@@ -1,4 +1,7 @@
 
+/*//////////////////////////
+// CALCULADOR DE AREAS - BEGINS
+//////////////////////////*/
 
 .numHeight {
     max-width: 50px !important;
@@ -17,7 +20,7 @@
 }
 
 
-.resultsTable {
+.resultsTableCalcAreas {
     font-family: Calibri;
     border-collapse: collapse;
     width: 100%;
@@ -26,23 +29,23 @@
     /*padding-right:10px;*/
 }
 
-.resultsTable th {
+.resultsTableCalcAreas th {
     background: #4F81BC;
     color: #ffffff;
     font-weight: normal;
 }
 
-.resultsTable td, .resultsTable th {
+.resultsTableCalcAreas td, .resultsTableCalcAreas th {
     border: 1px solid #ffffff;
     text-align: center;
     padding: 3px;
 }
 
-.resultsTable tr:nth-child(odd) {
+.resultsTableCalcAreas tr:nth-child(odd) {
     background-color: #E9ECF5;
 }
 
-.resultsTable tr:nth-child(even) {
+.resultsTableCalcAreas tr:nth-child(even) {
     background-color: #D1D7E7;
 }
 
@@ -55,3 +58,211 @@
 .ui-disabled {
     width: 20px;
 }
+
+/*//////////////////////////
+// CALCULADOR DE AREAS - ENDS
+//////////////////////////*/
+
+/*//////////////////////////
+// CAPACIDAD REPRODUCTIVA MOSCAS - BEGINS
+//////////////////////////*/
+
+/*MOSCA DOMESTICA*/
+
+.tableReproduccionDomestica {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+    display: none;
+    /*padding-right:10px;*/
+}
+
+.tableReproduccionDomestica th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableReproduccionDomestica td, .tableReproduccionDomestica th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableReproduccionDomestica tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableReproduccionDomestica tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableReproduccionDomestica td {
+    padding:0 2em 0 2em;
+}
+
+.domesticaRepTableForm td {
+    padding:0 3em 0 3em;
+}
+
+.domesticaRepDias, .domesticaRepHuevos, .domesticaRepSuper {
+    max-width: 60px !important;
+}
+
+.lblReqDomesticaRepDias, .lblReqDomesticaRepHuevos, .lblReqDomesticaRepSuper {
+    color: red;
+    font-family: Calibri;
+    display: none;
+}
+
+/*MOSCA ESTABLO*/
+
+.tableReproduccionEstablo {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+    display: none;
+    /*padding-right:10px;*/
+}
+
+.tableReproduccionEstablo th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableReproduccionEstablo td, .tableReproduccionEstablo th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableReproduccionEstablo tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableReproduccionEstablo tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableReproduccionEstablo td {
+    padding:0 2em 0 2em;
+}
+
+.establoRepTableForm td {
+    padding:0 3em 0 3em;
+}
+
+.establoRepDias, .establoRepHuevos, .establoRepSuper {
+    max-width: 60px !important;
+}
+
+.lblReqEstabloRepDias, .lblReqEstabloRepHuevos, .lblReqEstabloRepSuper {
+    color: red;
+    font-family: Calibri;
+    display: none;
+}
+
+/*MOSCA CUERNO*/
+
+.tableReproduccionCuerno {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+    display: none;
+    /*padding-right:10px;*/
+}
+
+.tableReproduccionCuerno th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableReproduccionCuerno td, .tableReproduccionCuerno th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableReproduccionCuerno tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableReproduccionCuerno tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableReproduccionCuerno td {
+    padding:0 2em 0 2em;
+}
+
+.cuernoRepTableForm td {
+    padding:0 3em 0 3em;
+}
+
+.cuernoRepDias, .cuernoRepHuevos, .cuernoRepSuper {
+    max-width: 60px !important;
+}
+
+.lblReqCuernoRepDias, .lblReqCuernoRepHuevos, .lblReqCuernoRepSuper {
+    color: red;
+    font-family: Calibri;
+    display: none;
+}
+
+/*MOSCA CARA*/
+
+.tableReproduccionCara {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+    display: none;
+    /*padding-right:10px;*/
+}
+
+.tableReproduccionCara th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableReproduccionCara td, .tableReproduccionCara th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableReproduccionCara tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableReproduccionCara tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableReproduccionCara td {
+    padding:0 2em 0 2em;
+}
+
+.caraRepTableForm td {
+    padding:0 3em 0 3em;
+}
+
+.caraRepDias, .caraRepHuevos, .caraRepSuper {
+    max-width: 60px !important;
+}
+
+.lblReqCaraRepDias, .lblReqCaraRepHuevos, .lblReqCaraRepSuper {
+    color: red;
+    font-family: Calibri;
+    display: none;
+}
+
+/*//////////////////////////
+// CAPACIDAD REPRODUCTIVA MOSCAS - ENDS
+//////////////////////////*/
