@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include jQuery Mobile stylesheets --> 
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- Include the jQuery library -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
+</head>
+<body>
+
+<div data-role="page">
+    <div data-role="header">
+        <h1>Insert Page Title Here</h1>
+    </div>
+    
+    <div class="ui-content">
+        <div id="divContent">
+            
+            <h3>Calculadora de dosificación de Rabon 97.3</h3>
+            
+            <div data-role="tabs" id="tabs">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#one" data-ajax="false">Tabla de dosificación Rabón 97.3</a></li>
+                        <li><a href="#two" data-ajax="false">Costo - Beneficio. Ganado de carne</a></li>
+                        <li><a href="#three" data-ajax="false">Costo - Beneficio. Ganado de leche</a></li>
+                    </ul>
+                </div>
+                <div id="one">
+                    <h2>Tabla de dosificación Rabon 97.3</h2>
+
+                    <table data-role="table" id="rabon-general-table" data-mode="reflow" class="rabon-general ui-responsive">
+                        <thead>
+                            <tr>
+                                <th data-priority="1">Nombre de la Explotación Pecuaria</th>
+                                <td><input data-clear-btn="true" required="true" name="txtExplotacionNombre" id="txtExplotacionNombre" value="" type="text" onchange="getRabonDose()"></td>
+                                <td><span class="reqTxtExplotacionNombre" id="reqTxtExplotacionNombre">*</span></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Contacto en la Explotación Pecuaria</th>
+                                <td><input data-clear-btn="true" required="true" name="txtExplotacionContacto" id="txtExplotacionContacto" value="" type="text" onchange="getRabonDose()"></td>
+                                <td><span class="reqTxtExplotacionContacto" id="reqTxtExplotacionContacto">*</span></td>
+                            </tr>
+                            <tr>
+                                <th>Fecha</th>
+                                <td><input data-clear-btn="true" required="true" name="txtRabonFecha" id="txtRabonFecha" value="" type="date" onchange="getRabonDose()"></td>
+                                <td><span class="reqTxtRabonFecha" id="reqTxtRabonFecha">*</span></td>
+                            </tr>
+                            <tr>
+                                <th>Asesor Bayer</th>
+                                <td><input data-clear-btn="true" required="true" name="txtBayerAsesor" id="txtBayerAsesor" value="" type="text" onchange="getRabonDose()"></td>
+                                <td><span class="reqTxtBayerAsesor" id="reqTxtBayerAsesor">*</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table id="tableRabonDose-1" class="tableRabonDose-1">
+                        <tr>
+                            <th># animales</th>
+                            <th>Peso del animal (KPV)</th>
+                            <th>Costo bote Rabon 97.3 (72.5 kg)</th>
+                            <th>Dosis requerida de Rabon 97.3 por KPV</th>
+                            <th>Dosis total de Rabon 97.3 por animal por día de 600 kg</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="rabonNoAnimales" data-clear-btn="true" required="true" name="rabonNoAnimales" id="rabonNoAnimales" type="number" onchange="getRabonDose()">
+                                    <span class="reqRabonNoAnimales" id="reqRabonNoAnimales">*</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="rabonPesoAnimal" data-clear-btn="true" required="true" name="rabonPesoAnimal" id="rabonPesoAnimal" type="number" step="0.1" onchange="getRabonDose()">
+                                    <span class="reqRabonPesoAnimal" id ="reqRabonPesoAnimal">*</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="rabonPrecio" data-clear-btn="true" required="true" name="rabonPrecio" id="rabonPrecio" type="number" step="0.1" onchange="getRabonDose()">
+                                    <span class="reqRabonPrecio" id="reqRabonPrecio">*</span>
+                                </div>
+                            </td>
+                            <td>
+                                <label><b>1.54 mg</b></label>
+                            </td>
+                            <td>
+                                <label id="resultRabon-01"></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br />
+
+                    <table id="tableRabonDose-2" class="tableRabonDose-2">
+                        <tr>
+                            <th></th>
+                            <th>CONCENTRADO COMERCIAL o ALIMENTO FINAL (húmedo o seco) (kilogramos)</th>
+                            <th>SUPLEMENTO MINERAL O SAL COMÚN (gramos)</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Total de kg de ALIMENTO / MINERAL por día por animal de 600 kg</p>
+                            </td>
+                            <td>
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="rabonAlimentoFinal-Kg" data-clear-btn="true" required="true" name="rabonAlimentoFinal-Kg" id="rabonAlimentoFinal-Kg" type="number" step="0.1" onchange="getRabonDose()">
+                                    <span class="reqRabonAlimentoFinal-Kg" id="reqRabonAlimentoFinal-Kg">*</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="rabonSalComun-g" data-clear-btn="true" required="true" name="rabonSalComun-g" id="rabonSalComun-g" type="number" onchange="getRabonDose()">
+                                    <span class="reqRabonSalComun-g" id="reqRabonSalComun-g">*</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Dosis de Rabon 97.3 requerida en animales de 600 kg por tonelada</p>
+                            </td>
+                            <td>
+                                <label id="resultRabon-02"></label>
+                            </td>
+                            <td>
+                                <label id="resultRabon-03"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Total de kg de alimento por día por hato de 67 animales de 600 kg</p>
+                            </td>
+                            <td>
+                                <label id="resultRabon-04"></label>
+                            </td>
+                            <td>
+                                <label id="resultRabon-05"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Dosis de Rabon 97.3 total por día por hato de 67 animales de 600 kg</p>
+                            </td>
+                            <td colspan="2">
+                                <label id="resultRabon-06"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Rendimiento de un bote de Rabon 97.3 (72.5 kg) en un hato de 67 animales de 600 kg</p>
+                            </td>
+                            <td colspan="2">
+                                <p>
+                                    <label id="resultRabon-07"></label>
+                                    <br />
+                                    <label id="resultRabon-08"></label>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Costo tratamiento por día por animal de 600 kg</p>
+                            </td>
+                            <td colspan="2">
+                                <label id="resultRabon-09"></label>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </div>
+                <div id="two">
+                    <h2>Costo - Beneficio. Ganado de carne</h2>
+
+                    <table data-role="table" id="carne-general-table" data-mode="reflow" class="carne-general-table ui-responsive">
+                        <thead>
+                            <tr>
+                                <th data-priority="1">Nombre de la Explotación Pecuaria</th>
+                                <td><input data-clear-btn="true" required="true" name="txtCarneExplotacionNombre" id="txtCarneExplotacionNombre" value="" type="text" onchange="getBeneficioCarne()"></td>
+                                <td><span class="reqTxtCarneExplotacionNombre" id="reqTxtCarneExplotacionNombre">*</span></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Contacto en la Explotación Pecuaria</th>
+                                <td><input data-clear-btn="true" required="true" name="txtCarneExplotacionContacto" id="txtCarneExplotacionContacto" value="" type="text" onchange="getBeneficioCarne()"></td>
+                                <td><span class="reqTxtCarneExplotacionContacto" id="reqTxtCarneExplotacionContacto">*</span></td>
+                            </tr>
+                            <tr>
+                                <th>Fecha</th>
+                                <td><input data-clear-btn="true" required="true" name="txtCarneRabonFecha" id="txtCarneRabonFecha" value="" type="date" onchange="getBeneficioCarne()"></td>
+                                <td><span class="reqTxtCarneRabonFecha" id="reqTxtCarneRabonFecha">*</span></td>
+                            </tr>
+                            <tr>
+                                <th>Asesor Bayer</th>
+                                <td><input data-clear-btn="true" required="true" name="txtCarneBayerAsesor" id="txtCarneBayerAsesor" value="" type="text" onchange="getBeneficioCarne()"></td>
+                                <td><span class="reqTxtCarneBayerAsesor" id="reqTxtCarneBayerAsesor">*</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+
+                    <table id="tableRabonCarne-1" class="tableRabonCarne-1">
+                        <tr>
+                            <th class="headTableTd" colspan="4">
+                                Paso 1: Pérdida de producción por animal por Día y Total durante el tratamiento.
+                            </th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Pérdida de producción</th>
+                            <th colspan="2">Pérdida por animal*</th>
+                            <th rowspan="2">Precio de mercado ($ por kg)</th>
+                        </tr>
+                        <tr>
+                            <th>Por día (gramos)</th>
+                            <th>Por temporada de moscas o días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pérdida de peso (Kgs)
+                            </td>
+                            <td>
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="carnePerdidaGramos" data-clear-btn="true" required="true" name="carnePerdidaGramos" id="carnePerdidaGramos" type="number" onchange="getBeneficioCarne()">
+                                    <span class="reqCarnePerdidaGramos" id="reqCarnePerdidaGramos">*</span>
+                                </div>
+                            </td>
+                            <td>
+                                <label id="carneResult_01"></label>
+                            </td>
+                            <td rowspan="2">
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="carnePrecioMercado" data-clear-btn="true" required="true" name="carnePrecioMercado" id="carnePrecioMercado" type="number" step="0.1" onchange="getBeneficioCarne()">
+                                    <span class="reqCarnePrecioMercado" id="reqCarnePrecioMercado">*</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pérdida de peso ( $ )
+                            </td>
+                            <td>
+                                <label id="carneResult_02"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_03"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Temporada de Moscas o Días tratamiento  
+                            </td>
+                            <td colspan="2">
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="carneDiasTratamiento" data-clear-btn="true" required="true" name="carneDiasTratamiento" id="carneDiasTratamiento" type="number" onchange="getBeneficioCarne()">
+                                    <span class="reqCarneDiasTratamiento" id="reqCarneDiasTratamiento">*</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="footerTableTd" colspan="4">
+                                * Referencia: García Jorge Humberto. Ganadería Productiva y Limpia. Cap. Las moscas en la Ganadería.
+                            </th>
+                        </tr>
+                    </table>
+
+                    <br />
+
+                    <table id="tableRabonCarne-2" class="tableRabonCarne-2">
+                        <tr>
+                            <th class="headTableTd" colspan="3">
+                                Paso 2: Costo de tratamiento con Rabon 97.3 Larvicida Oral Concentrado por animal.
+                            </th>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Dosis Rabon 97.3</td>
+                            <th colspan="2">Por tonelada de alimento</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label id="carneResult_04"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Costo Comercial Rabon 97.3</td>
+                            <th>1 Kg. de Rabon</th>
+                            <th>1 gr. de Rabon</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="carneResult_05"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_06"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Costo de la Dosis Rabon 97.3</td>
+                            <th>Por tonelada de alimento</th>
+                            <th>Por kilo de alimento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="carneResult_07"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_08"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Consumo diario de alimento por Animal. Promedio en kilogramos</td>
+                            <th colspan="2">Kgs. de alimento por animal</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label id="carneResult_09"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Costo Rabon 97.3 por animal</td>
+                            <th>Por día</th>
+                            <th>Por días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="carneResult_10"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_11"></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br />
+
+                    <table id="tableRabonCarne-3" class="tableRabonCarne-3">
+                        <tr>
+                            <th class="headTableTd" colspan="3">
+                                Paso 3: Costo - Beneficio del tratamiento con Rabon 97.3 Larvicida Oral Concentrado por animal
+                            </th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Pérdida en producción sin Rabon 97.3</th>
+                            <th colspan="2">Pérdida por animal</th>
+                        </tr>
+                        <tr>
+                            <th>Por día</th>
+                            <th>Por días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pérdida esperada por Animal sin Rabón 97.3
+                            </td>
+                            <td>
+                                <label id="carneResult_12"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_13"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Pérdida evitada con Rabon 97.3</th>
+                            <th colspan="2">Pérdida por animal</th>
+                        </tr>
+                        <tr>
+                            <th>Por día</th>
+                            <th>Por días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Inversión en Rabon 97.3
+                            </td>
+                            <td>
+                                <label id="carneResult_14"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_15"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pérdida en carne
+                            </td>
+                            <td>
+                                <label id="carneResult_16"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_17"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Beneficio Esperado por Animal con Rabon 97.3
+                            </td>
+                            <td>
+                                <label id="carneResult_18"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_19"></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br />
+
+                    <table id="tableRabonCarne-4" class="tableRabonCarne-4">
+                        <tr>
+                            <th class="headTableTd" colspan="3">
+                                Paso 4: Costo - Beneficio del tratamiento con Rabon 97.3 Larvicida Oral Concentrado. Total empresa
+                            </th>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">Beneficio esperado con Rabon 97.3</td>
+                            <th colspan="2">Animales en la explotación</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label id="carneResult_20"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Animales para producción de Carne</th>
+                        </tr>
+                        <tr>
+                            <th>Por día</th>
+                            <th>Por días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>Inversión en Rabon 97.3</td>
+                            <td>
+                                <label id="carneResult_21"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_22"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pérdida en carne</td>
+                            <td>
+                                <label id="carneResult_23"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_24"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Beneficio Esperado en su empresa con Rabon 97.3</td>
+                            <td>
+                                <label id="carneResult_25"></label>
+                            </td>
+                            <td>
+                                <label id="carneResult_26"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="footerTableTd" colspan="3">
+                                Sin Contar el ahorro en costos directos de otros mosquicidas (adulticidas)  y mano de obra para la aplicación de los mismos,
+                                mayor comodidad para el trabajo y supervisión, evitando las moscas en sus instalaciones. Ejercicio realizado con la Dosis mínima
+                                sugerida de Rabon por Tonelada de alimento (58grs - 100 grs. / Tonelada) dependiendo del nivel de infestación de moscas.
+                                El costo del Producto puede variar dependiendo de la región y los Valores por la explotación pecuaria (cuadros verdes).
+                                Para mayor información vea a su Distribuidor Bayer o visite la página www.sanidadanimalbayer.com.mx
+                                Todo lo relacionado a la Política de Privacidad de sus datos personales consúltelo en: www.bayersanidadanimal.com.mx
+                            </th>
+                        </tr>
+                    </table>
+                    
+                </div>
+                <div id="three">
+                    <h2>Costo - Beneficio. Ganado de leche</h2>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div data-role="footer" data-position="fixed">
+        <h1>Insert Footer Text Here</h1>
+    </div>
+
+</div>
+
+</body>
+</html>

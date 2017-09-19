@@ -19,7 +19,6 @@
     max-width: 50px !important;
 }
 
-
 .resultsTableCalcAreas {
     font-family: Calibri;
     border-collapse: collapse;
@@ -266,3 +265,344 @@
 /*//////////////////////////
 // CAPACIDAD REPRODUCTIVA MOSCAS - ENDS
 //////////////////////////*/
+
+
+/*//////////////////////////
+// DOSIFICACION RABON - BEGINS
+//////////////////////////*/
+
+/* DOSIFICACION RABON*/
+
+.rabon-general thead th,
+.rabon-general tbody tr:last-child {
+    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.rabon-general tbody th,
+.rabon-general tbody td {
+    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.rabon-general tbody tr:last-child th,
+.rabon-general tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.rabon-general tbody tr:nth-child(odd) td,
+.rabon-general tbody tr:nth-child(odd) th {
+    background-color: #eeeeee; /* non-RGBA fallback  */
+    background-color: rgba(0,0,0,.04);
+}
+
+.rabon-general th {
+    width: 30%;
+}
+
+.reqTxtExplotacionNombre, .reqTxtExplotacionContacto, .reqTxtRabonFecha, .reqTxtBayerAsesor {
+    display: inline-block;
+    padding-top: 0.5em;
+    font-size: xx-large;
+    color: #e32;
+}
+
+.divInternalForInputs {
+    display: inline-flex;
+}
+
+.rabonNoAnimales, .rabonPesoAnimal, .rabonPrecio, .rabonAlimentoFinal-Kg,
+.rabonSalComun-g {
+    max-width: 70px !important;
+}
+
+.reqRabonNoAnimales, .reqRabonPesoAnimal, .reqRabonPrecio, .reqRabonAlimentoFinal-Kg, 
+.reqRabonSalComun-g {
+    display: inline-block;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
+    font-size: xx-large;
+    color: #e32;
+}
+
+.tableRabonDose-1 {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+}
+
+.tableRabonDose-1 th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableRabonDose-1 td, .tableRabonDose-1 th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableRabonDose-1 tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableRabonDose-1 tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableRabonDose-2 {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+}
+
+.tableRabonDose-2 th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableRabonDose-2 td, .tableRabonDose-2 th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableRabonDose-2 tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableRabonDose-2 tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableRabonDose-2 th:first-child {
+    width: 50%;
+}
+
+/* COSTO BENEFICIO GANADO DE CARNE*/
+
+.carne-general-table thead th,
+.carne-general-table tbody tr:last-child {
+    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.carne-general-table tbody th,
+.carne-general-table tbody td {
+    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.carne-general-table tbody tr:last-child th,
+.carne-general-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.carne-general-table tbody tr:nth-child(odd) td,
+.carne-general-table tbody tr:nth-child(odd) th {
+    background-color: #eeeeee; /* non-RGBA fallback  */
+    background-color: rgba(0,0,0,.04);
+}
+
+.carne-general-table th {
+    width: 30%;
+}
+
+.reqTxtCarneExplotacionNombre, .reqTxtCarneExplotacionContacto, .reqTxtCarneRabonFecha, .reqTxtCarneBayerAsesor {
+    display: inline-block;
+    padding-top: 0.5em;
+    font-size: xx-large;
+    color: #e32;
+}
+
+.tableRabonCarne-1 {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+}
+
+.tableRabonCarne-1 th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableRabonCarne-1 td, .tableRabonCarne-1 th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableRabonCarne-1 tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableRabonCarne-1 tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableRabonCarne-1 .headTableTd {
+    background: #4F81BC;
+    font-weight: normal;
+    padding: 0;
+    color: white;
+}
+
+.tableRabonCarne-1 .footerTableTd {
+    background: white !important;
+    font-weight: normal !important;
+    padding: 0 !important;
+    color: #4F81BC !important;
+    text-align: right !important;
+}
+
+.carnePerdidaGramos, .carnePrecioMercado, .carneDiasTratamiento {
+    max-width: 70px !important;
+}
+
+.reqCarnePerdidaGramos, .reqCarnePrecioMercado, .reqCarneDiasTratamiento {
+    display: inline-block;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
+    font-size: xx-large;
+    color: #e32;
+}
+
+.tableRabonCarne-2 {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+}
+
+.tableRabonCarne-2 th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableRabonCarne-2 td, .tableRabonCarne-2 th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableRabonCarne-2 tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableRabonCarne-2 tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableRabonCarne-2 .headTableTd {
+    background: #4F81BC;
+    font-weight: normal;
+    padding: 0;
+    color: white;
+}
+
+.tableRabonCarne-2 .footerTableTd {
+    background: white !important;
+    font-weight: normal !important;
+    padding: 0 !important;
+    color: #4F81BC !important;
+    text-align: right !important;
+}
+
+
+.tableRabonCarne-3 {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+}
+
+.tableRabonCarne-3 th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableRabonCarne-3 td, .tableRabonCarne-3 th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableRabonCarne-3 tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableRabonCarne-3 tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableRabonCarne-3 .headTableTd {
+    background: #4F81BC;
+    font-weight: normal;
+    padding: 0;
+    color: white;
+}
+
+.tableRabonCarne-3 .footerTableTd {
+    background: white !important;
+    font-weight: normal !important;
+    padding: 0 !important;
+    color: #4F81BC !important;
+    text-align: right !important;
+}
+
+
+.tableRabonCarne-4 {
+    font-family: Calibri;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout:fixed;
+}
+
+.tableRabonCarne-4 th {
+    background: #4F81BC;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+.tableRabonCarne-4 td, .tableRabonCarne-4 th {
+    border: 1px solid #ffffff;
+    text-align: center;
+    padding: 3px;
+}
+
+.tableRabonCarne-4 tr:nth-child(odd) {
+    background-color: #E9ECF5;
+}
+
+.tableRabonCarne-4 tr:nth-child(even) {
+    background-color: #D1D7E7;
+}
+
+.tableRabonCarne-4 .headTableTd {
+    background: #4F81BC;
+    font-weight: normal;
+    padding: 0;
+    color: white;
+}
+
+.tableRabonCarne-4 .footerTableTd {
+    background: white !important;
+    font-weight: normal !important;
+    padding: 0 !important;
+    color: #4F81BC !important;
+    text-align: justify !important;
+}
+
+
+/*//////////////////////////
+// DOSIFICACION RABON - ENDS
+//////////////////////////*/
+
