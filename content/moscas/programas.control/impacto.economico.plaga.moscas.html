@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include jQuery Mobile stylesheets --> 
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- Include the jQuery library -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
+</head>
+<body>
+
+<div data-role="page">
+    
+    <div data-role="header">
+        <h1>Insert Page Title Here</h1>
+    </div>
+    
+    <div class="ui-content">
+        <div id="divContent">
+            <h2>Impacto económico de una plaga de moscas en establos lecheros</h2>
+            
+            <table data-role="table" id="impacto-moscas-general-table" data-mode="reflow" class="impacto-moscas-general-table ui-responsive">
+                <thead>
+                    <tr>
+                        <th data-priority="1">Establo</th>
+                        <td>
+                            <div class="divInternalForInputs">
+                                <input data-wrapper-class="impactoMoscasEstablo" data-clear-btn="true" required="true" name="impactoMoscasEstablo" id="impactoMoscasEstablo" type="text" onchange="getImpactoEconomicoMoscas()">
+                                <span class="reqImpactoMoscasEstablo" id="reqImpactoMoscasEstablo">*</span>
+                            </div>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th># de vacas en producción</th>
+                        <td>
+                            <div class="divInternalForInputs">
+                                <input data-wrapper-class="impactoMoscasVacas" data-clear-btn="true" required="true" name="impactoMoscasVacas" id="impactoMoscasVacas" type="number" onchange="getImpactoEconomicoMoscas()">
+                                <span class="reqImpactoMoscasVacas" id="reqImpactoMoscasVacas">*</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Producción vaca/día (litros)</th>
+                        <td>
+                            <div class="divInternalForInputs">
+                                <input data-wrapper-class="impactoMoscasProduccion" data-clear-btn="true" required="true" name="impactoMoscasProduccion" id="impactoMoscasProduccion" type="number" onchange="getImpactoEconomicoMoscas()">
+                                <span class="reqImpactoMoscasProduccion" id="reqImpactoMoscasProduccion">*</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>% de disminución (0-30%)*</th>
+                        <td>
+                            <div class="divInternalForInputs">
+                                <input data-wrapper-class="impactoMoscasDisminucion" data-clear-btn="true" required="true" name="impactoMoscasDisminucion" id="impactoMoscasDisminucion" type="number" onchange="getImpactoEconomicoMoscas()">
+                                <span class="reqImpactoMoscasDisminucion" id="reqImpactoMoscasDisminucion">*</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Precio del litro de leche</th>
+                        <td>
+                            <div class="divInternalForInputs">
+                                <input data-wrapper-class="impactoMoscasPrecioLeche" data-clear-btn="true" required="true" name="impactoMoscasPrecioLeche" id="impactoMoscasPrecioLeche" type="number" step="0.01" onchange="getImpactoEconomicoMoscas()">
+                                <span class="reqImpactoMoscasPrecioLeche" id="reqImpactoMoscasPrecioLeche">*</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Temporada de moscas (días)</th>
+                        <td>
+                            <div class="divInternalForInputs">
+                                <input data-wrapper-class="impactoMoscasDias" data-clear-btn="true" required="true" name="impactoMoscasDias" id="impactoMoscasDias" type="number" onchange="getImpactoEconomicoMoscas()">
+                                <span class="reqImpactoMoscasDias" id="reqImpactoMoscasDias">*</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <br />
+            <br />
+            
+            <table id="resultsImpactoMoscasTable" class="resultsImpactoMoscasTable">
+                <tr>
+                    <th>Disminución por vaca/día (litros)</th>
+                    <th>Disminución todas las vacas/día (litros)</th>
+                    <th>Impacto económico todas las vacas/día</th>
+                    <th>Impacto económico todas las vacas/temporada</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div data-role="footer" data-position="fixed">
+        <h1>Insert Footer Text Here</h1>
+    </div>
+
+</div> 
+
+</body>
+</html>

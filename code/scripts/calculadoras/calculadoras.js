@@ -925,3 +925,81 @@ function getBeneficioLeche() {
 ///////////////////////////
 // DOSIFICACION RABON - ENDS
 ///////////////////////////
+
+
+///////////////////////////
+// IMPACTO ECONOMICO MOSCAS - BEGINS
+///////////////////////////
+
+function getImpactoEconomicoMoscas() {
+
+    var row = document.getElementById('rowImpactoMoscasResult');
+    
+    if(row != null) {
+        row.parentNode.removeChild(row);
+    }
+    
+    $('#resultsImpactoMoscasTable').css('display', 'none');
+    
+    var $impactoMoscasEstabloVal = $('#impactoMoscasEstablo').val().trim();
+    var $impactoMoscasVacasVal = Number($('#impactoMoscasVacas').val());
+    var $impactoMoscasProduccionVal = Number($('#impactoMoscasProduccion').val());
+    var $impactoMoscasDisminucionVal = Number($('#impactoMoscasDisminucion').val());
+    var $impactoMoscasPrecioLecheVal = Number($('#impactoMoscasPrecioLeche').val());
+    var $impactoMoscasDiasVal = Number($('#impactoMoscasDias').val());
+    
+    $('#reqImpactoMoscasEstablo').css('display', 'none');
+    $('#reqImpactoMoscasVacas').css('display', 'none');
+    $('#reqImpactoMoscasProduccion').css('display', 'none');
+    $('#reqImpactoMoscasDisminucion').css('display', 'none');
+    $('#reqImpactoMoscasPrecioLeche').css('display', 'none');
+    $('#reqImpactoMoscasDias').css('display', 'none');
+
+    
+    if($impactoMoscasEstabloVal == "") {
+        $('#reqImpactoMoscasEstablo').css('display', 'inline-block');
+    } 
+    if($impactoMoscasVacasVal <= 0) {
+        $('#reqImpactoMoscasVacas').css('display', 'inline-block');
+    } 
+    if($impactoMoscasProduccionVal <= 0) {
+        $('#reqImpactoMoscasProduccion').css('display', 'inline-block');
+    } 
+    if($impactoMoscasDisminucionVal <= 0) {
+        $('#reqImpactoMoscasDisminucion').css('display', 'inline-block');
+    } 
+    if($impactoMoscasPrecioLecheVal <= 0) {
+        $('#reqImpactoMoscasPrecioLeche').css('display', 'inline-block');
+    } 
+    if($impactoMoscasDiasVal <= 0) {
+        $('#reqImpactoMoscasDias').css('display', 'inline-block');
+    } 
+        
+    if($impactoMoscasEstabloVal != "" && $impactoMoscasVacasVal > 0 && $impactoMoscasProduccionVal > 0
+        && $impactoMoscasDisminucionVal > 0 && $impactoMoscasPrecioLecheVal > 0 && $impactoMoscasDiasVal > 0) {
+        
+        var _disminucionVacaDia = 0;
+        var _disminucionTodasVacasDia = 0;
+        var _impactoTodasVacasDia = 0;
+        var _impactoTodasVacasTemp = 0;
+
+        _disminucionVacaDia = ($impactoMoscasProduccionVal * $impactoMoscasDisminucionVal) / 100;
+        _disminucionTodasVacasDia = _disminucionVacaDia * $impactoMoscasVacasVal;
+        _impactoTodasVacasDia = _disminucionTodasVacasDia * $impactoMoscasPrecioLecheVal;
+        _impactoTodasVacasTemp = _impactoTodasVacasDia * $impactoMoscasDiasVal;
+        
+        _auxTr = '<tr id="rowImpactoMoscasResult">'
+                + '<td>' + _disminucionVacaDia.toLocaleString('en-US') + '</td>'
+                + '<td>' + _disminucionTodasVacasDia.toLocaleString('en-US') + '</td>'
+                + '<td>$ ' + _impactoTodasVacasDia.toLocaleString('en-US') + '</td>'
+                + '<td>$ ' + _impactoTodasVacasTemp.toLocaleString('en-US') + '</td>'
+                + '</tr>';
+        
+        $('#resultsImpactoMoscasTable').append(_auxTr).enhanceWithin();
+        $('#resultsImpactoMoscasTable').css('display', 'block');
+    }
+}
+
+///////////////////////////
+// IMPACTO ECONOMICO MOSCAS - ENDS
+///////////////////////////
