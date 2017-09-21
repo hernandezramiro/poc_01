@@ -474,7 +474,299 @@
                 </div>
                 <div id="three">
                     <h2>Costo - Beneficio. Ganado de leche</h2>
-                        
+
+                    <table data-role="table" id="leche-general-table" data-mode="reflow" class="leche-general-table ui-responsive">
+                        <thead>
+                            <tr>
+                                <th data-priority="1">Nombre de la Explotación Pecuaria</th>
+                                <td><input data-clear-btn="true" required="true" name="txtLecheExplotacionNombre" id="txtLecheExplotacionNombre" value="" type="text" onchange="getBeneficioLeche()"></td>
+                                <td><span class="reqTxtLecheExplotacionNombre" id="reqTxtLecheExplotacionNombre">*</span></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Contacto en la Explotación Pecuaria</th>
+                                <td><input data-clear-btn="true" required="true" name="txtLecheExplotacionContacto" id="txtLecheExplotacionContacto" value="" type="text" onchange="getBeneficioLeche()"></td>
+                                <td><span class="reqTxtLecheExplotacionContacto" id="reqTxtLecheExplotacionContacto">*</span></td>
+                            </tr>
+                            <tr>
+                                <th>Fecha</th>
+                                <td><input data-clear-btn="true" required="true" name="txtLecheRabonFecha" id="txtLecheRabonFecha" value="" type="date" onchange="getBeneficioLeche()"></td>
+                                <td><span class="reqTxtLecheRabonFecha" id="reqTxtLecheRabonFecha">*</span></td>
+                            </tr>
+                            <tr>
+                                <th>Asesor Bayer</th>
+                                <td><input data-clear-btn="true" required="true" name="txtLecheBayerAsesor" id="txtLecheBayerAsesor" value="" type="text" onchange="getBeneficioLeche()"></td>
+                                <td><span class="reqTxtLecheBayerAsesor" id="reqTxtLecheBayerAsesor">*</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br />
+
+                    <table id="tableRabonLeche-1" class="tableRabonLeche-1">
+                        <tr>
+                            <th class="headTableTd" colspan="4">
+                                Paso 1: Pérdida de producción por animal por Día y Total durante el tratamiento.
+                            </th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Pérdida de producción</th>
+                            <th colspan="2">Pérdida por animal*</th>
+                            <th rowspan="2">Precio de mercado ($ por Litro)</th>
+                        </tr>
+                        <tr>
+                            <th>Por día (Litros)</th>
+                            <th>Por temporada de moscas o días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pérdida de producción (Litros)
+                            </td>
+                            <td>
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="lechePerdidaLitros" data-clear-btn="true" required="true" name="lechePerdidaLitros" id="lechePerdidaLitros" type="number" onchange="getBeneficioLeche()">
+                                    <span class="reqLechePerdidaLitros" id="reqLechePerdidaLitros">*</span>
+                                </div>
+                            </td>
+                            <td>
+                                <label id="lecheResult_01"></label>
+                            </td>
+                            <td rowspan="2">
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="lechePrecioMercado" data-clear-btn="true" required="true" name="lechePrecioMercado" id="lechePrecioMercado" type="number" step="0.1" onchange="getBeneficioLeche()">
+                                    <span class="reqLechePrecioMercado" id="reqLechePrecioMercado">*</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pérdida de producción ( $ )
+                            </td>
+                            <td>
+                                <label id="lecheResult_02"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_03"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Temporada de Moscas o Días tratamiento  
+                            </td>
+                            <td colspan="2">
+                                <div class="divInternalForInputs">
+                                    <input data-wrapper-class="lecheDiasTratamiento" data-clear-btn="true" required="true" name="lecheDiasTratamiento" id="lecheDiasTratamiento" type="number" onchange="getBeneficioLeche()">
+                                    <span class="reqLecheDiasTratamiento" id="reqLecheDiasTratamiento">*</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="footerTableTd" colspan="4">
+                                * Referencia: García Jorge Humberto. Ganadería Productiva y Limpia. Cap. Las moscas en la Ganadería.
+                            </th>
+                        </tr>
+                    </table>
+
+                    <br />
+
+                    <table id="tableRabonLeche-2" class="tableRabonLeche-2">
+                        <tr>
+                            <th class="headTableTd" colspan="3">
+                                Paso 2: Costo de tratamiento con Rabon 97.3 Larvicida Oral Concentrado por animal.
+                            </th>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Dosis Rabon 97.3</td>
+                            <th colspan="2">Por tonelada de alimento</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label id="lecheResult_04"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Costo Comercial Rabon 97.3</td>
+                            <th>1 Kg. de Rabon</th>
+                            <th>1 gr. de Rabon</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="lecheResult_05"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_06"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Costo de la Dosis Rabon 97.3</td>
+                            <th>Por tonelada de alimento</th>
+                            <th>Por kilo de alimento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="lecheResult_07"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_08"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Consumo diario de alimento por Animal. Promedio en kilogramos</td>
+                            <th colspan="2">Kgs. de alimento por animal</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label id="lecheResult_09"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Costo Rabon 97.3 por animal</td>
+                            <th>Por día</th>
+                            <th>Por días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="lecheResult_10"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_11"></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br />
+
+                    <table id="tableRabonLeche-3" class="tableRabonLeche-3">
+                        <tr>
+                            <th class="headTableTd" colspan="3">
+                                Paso 3: Costo - Beneficio del tratamiento con Rabon 97.3 Larvicida Oral Concentrado por animal
+                            </th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Pérdida en producción sin Rabon 97.3</th>
+                            <th colspan="2">Pérdida por animal</th>
+                        </tr>
+                        <tr>
+                            <th>Por día</th>
+                            <th>Por días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pérdida esperada por Animal sin Rabón 97.3
+                            </td>
+                            <td>
+                                <label id="lecheResult_12"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_13"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Pérdida evitada con Rabon 97.3</th>
+                            <th colspan="2">Pérdida por animal</th>
+                        </tr>
+                        <tr>
+                            <th>Por día</th>
+                            <th>Por días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Inversión en Rabon 97.3
+                            </td>
+                            <td>
+                                <label id="lecheResult_14"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_15"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pérdida en producción de leche
+                            </td>
+                            <td>
+                                <label id="lecheResult_16"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_17"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Beneficio Esperado por Animal con Rabon 97.3
+                            </td>
+                            <td>
+                                <label id="lecheResult_18"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_19"></label>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br />
+                    
+                    <table id="tableRabonLeche-4" class="tableRabonLeche-4">
+                        <tr>
+                            <th class="headTableTd" colspan="3">
+                                Paso 4: Costo - Beneficio del tratamiento con Rabon 97.3 Larvicida Oral Concentrado. Total empresa
+                            </th>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">Beneficio esperado con Rabon 97.3</td>
+                            <th colspan="2">Animales en la explotación</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label id="lecheResult_20"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Animales para producción Lechera</th>
+                        </tr>
+                        <tr>
+                            <th>Por día</th>
+                            <th>Por días de tratamiento</th>
+                        </tr>
+                        <tr>
+                            <td>Inversión en Rabon 97.3</td>
+                            <td>
+                                <label id="lecheResult_21"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_22"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pérdida en producción Lechera</td>
+                            <td>
+                                <label id="lecheResult_23"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_24"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Beneficio Esperado en su empresa con Rabon 97.3</td>
+                            <td>
+                                <label id="lecheResult_25"></label>
+                            </td>
+                            <td>
+                                <label id="lecheResult_26"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="footerTableTd" colspan="3">
+                                Sin Contar el ahorro en costos directos de otros mosquicidas (adulticidas)  y mano de obra para la aplicación de los mismos,
+                                mayor comodidad para el trabajo y supervisión, evitando las moscas en sus instalaciones. Ejercicio realizado con la Dosis mínima
+                                sugerida de Rabon por Tonelada de alimento (58grs - 100 grs. / Tonelada) dependiendo del nivel de infestación de moscas.
+                                El costo del Producto puede variar dependiendo de la región y los Valores por la explotación pecuaria (cuadros verdes).
+                                Para mayor información vea a su Distribuidor Bayer o visite la página www.sanidadanimalbayer.com.mx
+                                Todo lo relacionado a la Política de Privacidad de sus datos personales consúltelo en: www.bayersanidadanimal.com.mx
+                            </th>
+                        </tr>
+                    </table>
                     
                 </div>
             </div>

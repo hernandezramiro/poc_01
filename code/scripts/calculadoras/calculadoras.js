@@ -779,10 +779,134 @@ function getBeneficioCarne() {
             }
         }
     }
+}
 
+function getBeneficioLeche() {
+    var resultRabonLeche_01, resultRabonLeche_02, resultRabonLeche_03, resultRabonLeche_04, resultRabonLeche_05, resultRabonLeche_06, 
+        resultRabonLeche_07, resultRabonLeche_08, resultRabonLeche_09, resultRabonLeche_10, resultRabonLeche_11, resultRabonLeche_12, 
+        resultRabonLeche_13, resultRabonLeche_14, resultRabonLeche_15, resultRabonLeche_16, resultRabonLeche_17, resultRabonLeche_18, 
+        resultRabonLeche_19, resultRabonLeche_20, resultRabonLeche_21, resultRabonLeche_22, resultRabonLeche_23, resultRabonLeche_24, 
+        resultRabonLeche_25, resultRabonLeche_26;
+    
+    var $txtLecheExplotacionNombreVal = $('#txtLecheExplotacionNombre').val().trim();
+    var $txtLecheExplotacionContactoVal = $('#txtLecheExplotacionContacto').val().trim();
+    var $txtLecheRabonFechaVal = $('#txtLecheRabonFecha').val().trim();
+    var $txtLecheBayerAsesorVal = $('#txtLecheBayerAsesor').val().trim();
+    var $lechePerdidaLitrosVal = Number($('#lechePerdidaLitros').val());
+    var $lechePrecioMercadoVal = Number($('#lechePrecioMercado').val());
+    var $lecheDiasTratamientoVal = Number($('#lecheDiasTratamiento').val());
+    
+    $('#reqTxtLecheExplotacionNombre').css('display', 'none');
+    $('#reqTxtLecheExplotacionContacto').css('display', 'none');
+    $('#reqTxtLecheRabonFecha').css('display', 'none');
+    $('#reqTxtLecheBayerAsesor').css('display', 'none');
+    $('#reqLechePerdidaLitros').css('display', 'none');
+    $('#reqLechePrecioMercado').css('display', 'none');
+    $('#reqLecheDiasTratamiento').css('display', 'none');
 
+    if($txtLecheExplotacionNombreVal == "") {
+        $('#reqTxtLecheExplotacionNombre').css('display', 'inline-block');
+    } 
+    if($txtLecheExplotacionContactoVal == "") {
+        $('#reqTxtLecheExplotacionContacto').css('display', 'inline-block');
+    } 
+    if($txtLecheRabonFechaVal == "") {
+        $('#reqTxtLecheRabonFecha').css('display', 'inline-block');
+    } 
+    if($txtLecheBayerAsesorVal == "") {
+        $('#reqTxtLecheBayerAsesor').css('display', 'inline-block');
+    }   
+    if($lechePerdidaLitrosVal <= 0) {
+        $('#reqLechePerdidaLitros').css('display', 'inline-block');
+    } 
+    if($lechePrecioMercadoVal <= 0) {
+        $('#reqLechePrecioMercado').css('display', 'inline-block');
+    } 
+    if($lecheDiasTratamientoVal <= 0) {
+        $('#reqLecheDiasTratamiento').css('display', 'inline-block');
+    }
 
+    if($txtLecheExplotacionNombreVal != "" && $txtLecheExplotacionContactoVal != "" && $txtLecheRabonFechaVal != "" && $txtLecheBayerAsesorVal != ""
+        && $lechePerdidaLitrosVal > 0 && $lechePrecioMercadoVal > 0 && $lecheDiasTratamientoVal > 0) {
+        
+        if(globalResultRabon_02 > 0 && globalRabonPrecio > 0 && globalRabonAlimentoFinal_Kg > 0 && globalRabonNoAnimales > 0){
+        
+            resultRabonLeche_01 = $lechePerdidaLitrosVal * $lecheDiasTratamientoVal;
+            resultRabonLeche_02 = $lechePrecioMercadoVal * $lechePerdidaLitrosVal;
+            resultRabonLeche_03 = resultRabonLeche_02 * $lecheDiasTratamientoVal;
+            resultRabonLeche_04 = globalResultRabon_02;
+            resultRabonLeche_05 = globalRabonPrecio/72.5;
+            resultRabonLeche_06 = resultRabonLeche_05/1000;
+            resultRabonLeche_07 = resultRabonLeche_06*resultRabonLeche_04;
+            resultRabonLeche_08 = resultRabonLeche_07/1000;
+            resultRabonLeche_09 = globalRabonAlimentoFinal_Kg;
+            resultRabonLeche_10 = resultRabonLeche_09 * resultRabonLeche_08;
+            resultRabonLeche_11 = resultRabonLeche_10 * $lecheDiasTratamientoVal;
+            resultRabonLeche_12 = resultRabonLeche_02;
+            resultRabonLeche_13 = resultRabonLeche_03;
+            resultRabonLeche_14 = resultRabonLeche_10;
+            resultRabonLeche_15 = resultRabonLeche_11;
+            resultRabonLeche_16 = resultRabonLeche_12;
+            resultRabonLeche_17 = resultRabonLeche_13;
+            resultRabonLeche_18 = resultRabonLeche_16 - resultRabonLeche_14;
+            resultRabonLeche_19 = resultRabonLeche_17 - resultRabonLeche_15;
+            resultRabonLeche_20 = globalRabonNoAnimales;
+            resultRabonLeche_21 = resultRabonLeche_14 * resultRabonLeche_20;
+            resultRabonLeche_22 = resultRabonLeche_15 * resultRabonLeche_20;
+            resultRabonLeche_23 = resultRabonLeche_16 * resultRabonLeche_20;
+            resultRabonLeche_24 = resultRabonLeche_17 * resultRabonLeche_20;
+            resultRabonLeche_25 = resultRabonLeche_23 - resultRabonLeche_21;
+            resultRabonLeche_26 = resultRabonLeche_24 - resultRabonLeche_22;
 
+            $('#lecheResult_01').html('<b>' + resultRabonLeche_01 + ' Litros </b>');
+            $('#lecheResult_02').html('<b>-$' + resultRabonLeche_02.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_03').html('<b>-$' + resultRabonLeche_03.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_04').html('<b>' + resultRabonLeche_04.toLocaleString('en-US') + ' grs. </b>');
+            $('#lecheResult_05').html('<b>$' + resultRabonLeche_05.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_06').html('<b>$' + resultRabonLeche_06.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_07').html('<b>$' + resultRabonLeche_07.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_08').html('<b>$' + resultRabonLeche_08.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_09').html('<b>' + resultRabonLeche_09.toLocaleString('en-US') + ' kgs.</b>');
+            $('#lecheResult_10').html('<b>$' + resultRabonLeche_10.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_11').html('<b>$' + resultRabonLeche_11.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_12').html('<b>-$' + resultRabonLeche_12.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_13').html('<b>-$' + resultRabonLeche_13.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_14').html('<b>$' + resultRabonLeche_14.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_15').html('<b>$' + resultRabonLeche_15.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_16').html('<b>-$' + resultRabonLeche_16.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_17').html('<b>-$' + resultRabonLeche_17.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_18').html('<b>$' + resultRabonLeche_18.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_19').html('<b>$' + resultRabonLeche_19.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_20').html('<b>' + resultRabonLeche_20.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_21').html('<b>$' + resultRabonLeche_21.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_22').html('<b>$' + resultRabonLeche_22.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_23').html('<b>-$' + resultRabonLeche_23.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_24').html('<b>-$' + resultRabonLeche_24.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_25').html('<b>$' + resultRabonLeche_25.toLocaleString('en-US') + ' </b>');
+            $('#lecheResult_26').html('<b>$' + resultRabonLeche_26.toLocaleString('en-US') + ' </b>');
+        } else {
+            for(i=1; i < 27; i++) {
+                if(i < 10) {
+                    $('#lecheResult_0' + i).html('');
+                }
+                else {
+                    $('#lecheResult_' + i).html('');
+                }
+            }
+
+            alert('Debe completar la calculadora de dosificación de Rabon 97.3');
+        }
+    }
+    else {
+        for(i=1; i < 27; i++) {
+            if(i < 10) {
+                $('#lecheResult_0' + i).html('');
+            }
+            else {
+                $('#lecheResult_' + i).html('');
+            }
+        }
+    }
 }
 
 ///////////////////////////
