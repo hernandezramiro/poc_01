@@ -17,21 +17,20 @@ function calculadorAreasGetResult(index){
     $('#lblReqNumEqualInstallations_' + count).css('display', 'none');
     $('#lblReqNumExtraTubos_' + count).css('display', 'none');
 
-
     if($txtInstallationTypeVal.trim() == "") {
-        $('#lblReqInstallationType_' + count).css('display', 'block');
+        $('#lblReqInstallationType_' + count).css('display', 'inline-block');
     }
     if($numHeightVal <= 0) {
-        $('#lblReqNumHeight_' + count).css('display', 'block');
+        $('#lblReqNumHeight_' + count).css('display', 'inline-block');
     } 
     if($numWidthVal <= 0) {
-        $('#lblReqNumWidth_' + count).css('display', 'block');
+        $('#lblReqNumWidth_' + count).css('display', 'inline-block');
     } 
     if($numEqualInstallationsVal <= 0) {
-        $('#lblReqNumEqualInstallations_' + count).css('display', 'block');
+        $('#lblReqNumEqualInstallations_' + count).css('display', 'inline-block');
     } 
     if($numExtraTubosVal <= 0) {
-        $('#lblReqNumExtraTubos_' + count).css('display', 'block');
+        $('#lblReqNumExtraTubos_' + count).css('display', 'inline-block');
     }
 
     if($txtInstallationTypeVal.trim() != "" && $numHeightVal > 0 && $numWidthVal > 0 && $numEqualInstallationsVal > 0 && $numExtraTubosVal > 0) {
@@ -61,42 +60,52 @@ function calculadorAreasGetResult(index){
                 + '<label>' + result + '</label>'
                 + '</td>'
                 + '<td>'
-                + '<div data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini"><div class="ui-controlgroup-controls ">'
+                + '<div data-role="controlgroup" data-type="horizontal" data-mini="true">'
                 + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-edit ui-btn-icon-notext" onclick="calculadorAreasModifyResult(' + count + ')">Edit</a>'
-                + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-last-child" onclick="calculadorAreasDeleteResult(' + count + ')">Delete</a>'
-                + '</div></div>'
+                + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext" onclick="calculadorAreasDeleteResult(' + count + ')">Delete</a>'
+                + '</div>'
                 + '</td>'
 
         $('#resultRow_' + count).html(_modifiedTr);
-
+        
         count = count + 1;
 
         var _newTr = '<tr id="resultRow_' + count + '">'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-clear-btn="true" required="true" name="txtInstallationType" id="txtInstallationType_' + count + '" value="" type="text">'
-                + '<p class="lblReqInstallationType" id="lblReqInstallationType_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqInstallationType" id="lblReqInstallationType_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-wrapper-class="numHeight" data-clear-btn="true" required="true" name="numHeight" id="numHeight_' + count + '" type="number" step="0.1">'
-                + '<p class="lblReqNumHeight" id="lblReqNumHeight_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqNumHeight" id="lblReqNumHeight_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-wrapper-class="numWidth" data-clear-btn="true" required="true" name="numWidth" id="numWidth_' + count + '" type="number" step="0.1">'
-                + '<p class="lblReqNumWidth" id="lblReqNumWidth_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqNumWidth" id="lblReqNumWidth_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-wrapper-class="numEqualInstallations" data-clear-btn="true" required="true" name="numEqualInstallations" id="numEqualInstallations_' + count + '" type="number">'
-                + '<p class="lblReqNumEqualInstallations" id="lblReqNumEqualInstallations_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqNumEqualInstallations" id="lblReqNumEqualInstallations_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-wrapper-class="numExtraTubos" data-clear-btn="true" required="true" name="numExtraTubos" id="numExtraTubos_' + count + '" type="number">'
-                + '<p class="lblReqNumExtraTubos" id="lblReqNumExtraTubos_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqNumExtraTubos" id="lblReqNumExtraTubos_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td><label></label></td>'
                 + '<td>'
-                + '<div data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini"><div class="ui-controlgroup-controls ">'
-                + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-first-child" onclick="calculadorAreasGetResult(' + count + ')">Add</a>'
-                + '</div></div>'
+                + '<div data-role="controlgroup" data-type="horizontal" data-mini="true">'
+                + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext" onclick="calculadorAreasGetResult(' + count + ')">Add</a>'
+                + '</div>'
                 + '</td>'
                 + '</tr>';
         
@@ -122,41 +131,47 @@ function calculadorAreasModifyResult(index) {
     var $lblExtraTubosVal = Number($('#lblExtraTubos_' + count).text());
 
     var _modifiedTr = '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-clear-btn="true" required="true" name="txtInstallationType" id="txtInstallationType_' + count + '" value="' + $lblInstallationTypeVal + '" type="text">'
-                + '<p class="lblReqInstallationType" id="lblReqInstallationType_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqInstallationType" id="lblReqInstallationType_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-wrapper-class="numHeight" data-clear-btn="true" required="true" name="numHeight" id="numHeight_' + count + '" value="' + $lblHeightVal + '" type="number" step="0.1">'
-                + '<p class="lblReqNumHeight" id="lblReqNumHeight_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqNumHeight" id="lblReqNumHeight_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-wrapper-class="numWidth" data-clear-btn="true" required="true" name="numWidth" id="numWidth_' + count + '" value="' + $lblWidthVal + '" type="number" step="0.1">'
-                + '<p class="lblReqNumWidth" id="lblReqNumWidth_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqNumWidth" id="lblReqNumWidth_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-wrapper-class="numEqualInstallations" data-clear-btn="true" required="true" name="numEqualInstallations" id="numEqualInstallations_' + count + '" value="' + $lblEqualInstallationsVal + '" type="number">'
-                + '<p class="lblReqNumEqualInstallations" id="lblReqNumEqualInstallations_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqNumEqualInstallations" id="lblReqNumEqualInstallations_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td>'
+                + '<div class="divInternalForInputs">'
                 + '<input data-wrapper-class="numExtraTubos" data-clear-btn="true" required="true" name="numExtraTubos" id="numExtraTubos_' + count + '" value="' + $lblExtraTubosVal + '" type="number">'
-                + '<p class="lblReqNumExtraTubos" id="lblReqNumExtraTubos_' + count + '">Campo requerido</p>'
+                + '<span class="lblReqNumExtraTubos" id="lblReqNumExtraTubos_' + count + '">*</span>'
+                + '</div>'
                 + '</td>'
                 + '<td><label></label></td>'
                 + '<td>'
-                + '<div data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini"><div class="ui-controlgroup-controls ">'
-                + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext ui-first-child" onclick="calculadorAreasUpdateResult(' + count + ')">Add</a>'
-                + '</div></div>'
+                + '<div data-role="controlgroup" data-type="horizontal" data-mini="true">'
+                + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-notext" onclick="calculadorAreasUpdateResult(' + count + ')">Add</a>'
+                + '</div>'
                 + '</td>';
-
-    //$('#resultsTable').append(_newTr).enhanceWithin();
 
     $('.ui-icon-plus').prop('disabled', true).addClass('ui-disabled');
     $('.ui-icon-edit').prop('disabled', true).addClass('ui-disabled');
     $('.ui-icon-delete').prop('disabled', true).addClass('ui-disabled');  
     
     $('#resultRow_' + count).html(_modifiedTr).enhanceWithin();
-    
-
 }
 
 function calculadorAreasUpdateResult(index){
@@ -173,21 +188,20 @@ function calculadorAreasUpdateResult(index){
     $('#lblReqNumEqualInstallations_' + count).css('display', 'none');
     $('#lblReqNumExtraTubos_' + count).css('display', 'none');
 
-
     if($txtInstallationTypeVal.trim() == "") {
-        $('#lblReqInstallationType_' + count).css('display', 'block');
+        $('#lblReqInstallationType_' + count).css('display', 'inline-block');
     }
     if($numHeightVal <= 0) {
-        $('#lblReqNumHeight_' + count).css('display', 'block');
+        $('#lblReqNumHeight_' + count).css('display', 'inline-block');
     } 
     if($numWidthVal <= 0) {
-        $('#lblReqNumWidth_' + count).css('display', 'block');
+        $('#lblReqNumWidth_' + count).css('display', 'inline-block');
     } 
     if($numEqualInstallationsVal <= 0) {
-        $('#lblReqNumEqualInstallations_' + count).css('display', 'block');
+        $('#lblReqNumEqualInstallations_' + count).css('display', 'inline-block');
     } 
     if($numExtraTubosVal <= 0) {
-        $('#lblReqNumExtraTubos_' + count).css('display', 'block');
+        $('#lblReqNumExtraTubos_' + count).css('display', 'inline-block');
     }
 
     if($txtInstallationTypeVal.trim() != "" && $numHeightVal > 0 && $numWidthVal > 0 && $numEqualInstallationsVal > 0 && $numExtraTubosVal > 0) {
@@ -217,22 +231,21 @@ function calculadorAreasUpdateResult(index){
                 + '<label>' + result + '</label>'
                 + '</td>'
                 + '<td>'
-                + '<div data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all ui-mini"><div class="ui-controlgroup-controls ">'
+                + '<div data-role="controlgroup" data-type="horizontal" data-mini="true">'
                 + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-edit ui-btn-icon-notext" onclick="calculadorAreasModifyResult(' + count + ')">Edit</a>'
-                + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-last-child" onclick="calculadorAreasDeleteResult(' + count + ')">Delete</a>'
-                + '</div></div>'
+                + '<a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext" onclick="calculadorAreasDeleteResult(' + count + ')">Delete</a>'
+                + '</div>'
                 + '</td>'
-
-        $('#resultRow_' + count).html(_modifiedTr);
 
         $('.ui-icon-plus').prop('disabled', true).removeClass('ui-disabled');
         $('.ui-icon-edit').prop('disabled', true).removeClass('ui-disabled');
-        $('.ui-icon-delete').prop('disabled', true).removeClass('ui-disabled');  
+        $('.ui-icon-delete').prop('disabled', true).removeClass('ui-disabled');
+        
+        $('#resultRow_' + count).html(_modifiedTr).enhanceWithin();
     }
 }
 
 function calculadorAreasDeleteResult(index) {
-
     console.log(index);
         var row = document.getElementById('resultRow_' + index);
         row.parentNode.removeChild(row);
@@ -270,13 +283,13 @@ function getReproduccionDomestica() {
     $('#lblReqDomesticaRepSuper').css('display', 'none');
 
     if($domRepDiasVal <= 0) {
-        $('#lblReqDomesticaRepDias').css('display', 'block');
+        $('#lblReqDomesticaRepDias').css('display', 'inline-block');
     } 
     if($domRepHuevosVal <= 0) {
-        $('#lblReqDomesticaRepHuevos').css('display', 'block');
+        $('#lblReqDomesticaRepHuevos').css('display', 'inline-block');
     } 
     if($domRepSuperVal <= 0) {
-        $('#lblReqDomesticaRepSuper').css('display', 'block');
+        $('#lblReqDomesticaRepSuper').css('display', 'inline-block');
     } 
     
     if($domRepDiasVal > 0 && $domRepHuevosVal > 0 && $domRepSuperVal > 0) {
@@ -334,13 +347,13 @@ function getReproduccionEstablo() {
     $('#lblReqEstabloRepSuper').css('display', 'none');
     
     if($establoRepDiasVal <= 0) {
-        $('#lblReqEstabloRepDias').css('display', 'block');
+        $('#lblReqEstabloRepDias').css('display', 'inline-block');
     } 
     if($establoRepHuevosVal <= 0) {
-        $('#lblReqEstabloRepHuevos').css('display', 'block');
+        $('#lblReqEstabloRepHuevos').css('display', 'inline-block');
     } 
     if($establoRepSuperVal <= 0) {
-        $('#lblReqEstabloRepSuper').css('display', 'block');
+        $('#lblReqEstabloRepSuper').css('display', 'inline-block');
     } 
         
     if($establoRepDiasVal > 0 && $establoRepHuevosVal > 0 && $establoRepSuperVal > 0) {
@@ -398,13 +411,13 @@ function getReproduccionCuerno() {
     $('#lblReqCuernoRepSuper').css('display', 'none');
     
     if($cuernoRepDiasVal <= 0) {
-        $('#lblReqCuernoRepDias').css('display', 'block');
+        $('#lblReqCuernoRepDias').css('display', 'inline-block');
     } 
     if($cuernoRepHuevosVal <= 0) {
-        $('#lblReqCuernoRepHuevos').css('display', 'block');
+        $('#lblReqCuernoRepHuevos').css('display', 'inline-block');
     } 
     if($cuernoRepSuperVal <= 0) {
-        $('#lblReqCuernoRepSuper').css('display', 'block');
+        $('#lblReqCuernoRepSuper').css('display', 'inline-block');
     } 
         
     if($cuernoRepDiasVal > 0 && $cuernoRepHuevosVal > 0 && $cuernoRepSuperVal > 0) {
@@ -462,13 +475,13 @@ function getReproduccionCara() {
     $('#lblReqCaraRepSuper').css('display', 'none');
         
     if($caraRepDiasVal <= 0) {
-        $('#lblReqCaraRepDias').css('display', 'block');
+        $('#lblReqCaraRepDias').css('display', 'inline-block');
     } 
     if($caraRepHuevosVal <= 0) {
-        $('#lblReqCaraRepHuevos').css('display', 'block');
+        $('#lblReqCaraRepHuevos').css('display', 'inline-block');
     } 
     if($caraRepSuperVal <= 0) {
-        $('#lblReqCaraRepSuper').css('display', 'block');
+        $('#lblReqCaraRepSuper').css('display', 'inline-block');
     } 
             
     if($caraRepDiasVal > 0 && $caraRepHuevosVal > 0 && $caraRepSuperVal > 0) {

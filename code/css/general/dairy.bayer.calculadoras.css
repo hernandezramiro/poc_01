@@ -49,9 +49,11 @@
 }
 
 .lblReqInstallationType, .lblReqNumHeight, .lblReqNumWidth, .lblReqNumEqualInstallations, .lblReqNumExtraTubos {
-    color: red;
-    font-family: Calibri;
     display: none;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
+    font-size: x-large;
+    color: #e32;
 }
 
 .ui-disabled {
@@ -110,9 +112,11 @@
 }
 
 .lblReqDomesticaRepDias, .lblReqDomesticaRepHuevos, .lblReqDomesticaRepSuper {
-    color: red;
-    font-family: Calibri;
     display: none;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
+    font-size: xx-large;
+    color: #e32;
 }
 
 /*MOSCA ESTABLO*/
@@ -159,9 +163,11 @@
 }
 
 .lblReqEstabloRepDias, .lblReqEstabloRepHuevos, .lblReqEstabloRepSuper {
-    color: red;
-    font-family: Calibri;
     display: none;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
+    font-size: xx-large;
+    color: #e32;
 }
 
 /*MOSCA CUERNO*/
@@ -208,9 +214,11 @@
 }
 
 .lblReqCuernoRepDias, .lblReqCuernoRepHuevos, .lblReqCuernoRepSuper {
-    color: red;
-    font-family: Calibri;
     display: none;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
+    font-size: xx-large;
+    color: #e32;
 }
 
 /*MOSCA CARA*/
@@ -257,9 +265,11 @@
 }
 
 .lblReqCaraRepDias, .lblReqCaraRepHuevos, .lblReqCaraRepSuper {
-    color: red;
-    font-family: Calibri;
     display: none;
+    padding-top: 0.5em;
+    padding-left: 0.2em;
+    font-size: xx-large;
+    color: #e32;
 }
 
 /*//////////////////////////
