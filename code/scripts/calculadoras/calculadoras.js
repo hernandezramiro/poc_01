@@ -277,10 +277,12 @@ function getReproduccionDomestica() {
     var $domRepDiasVal = Number($('#domesticaRepDias').val());
     var $domRepHuevosVal = Number($('#domesticaRepHuevos').val());
     var $domRepSuperVal = Number($('#domesticaRepSuper').val());
+    var $domesticaRepHemIniVal = Number($('#domesticaRepHemIni').val());
 
     $('#lblReqDomesticaRepDias').css('display', 'none');
     $('#lblReqDomesticaRepHuevos').css('display', 'none');
     $('#lblReqDomesticaRepSuper').css('display', 'none');
+    $('#lblReqDomesticaRepHemIni').css('display', 'none');
 
     if($domRepDiasVal <= 0) {
         $('#lblReqDomesticaRepDias').css('display', 'inline-block');
@@ -290,15 +292,18 @@ function getReproduccionDomestica() {
     } 
     if($domRepSuperVal <= 0) {
         $('#lblReqDomesticaRepSuper').css('display', 'inline-block');
+    }
+    if($domesticaRepHemIniVal <= 0) {
+        $('#lblReqDomesticaRepHemIni').css('display', 'inline-block');
     } 
     
-    if($domRepDiasVal > 0 && $domRepHuevosVal > 0 && $domRepSuperVal > 0) {
+    if($domRepDiasVal > 0 && $domRepHuevosVal > 0 && $domRepSuperVal > 0 && $domesticaRepHemIniVal > 0) {
         var _auxPer = $domRepSuperVal  / Number(100);
         
         var _resultsContent = '';
         var _auxTr = '';
         var _auxDias = 0;
-        var _auxCountHembras = 1;
+        var _auxCountHembras = $domesticaRepHemIniVal;
         var _auxCountMoscas = 0;
 
         for(i=1; i < auxRows; i++) {
@@ -341,10 +346,12 @@ function getReproduccionEstablo() {
     var $establoRepDiasVal = Number($('#establoRepDias').val());
     var $establoRepHuevosVal = Number($('#establoRepHuevos').val());
     var $establoRepSuperVal = Number($('#establoRepSuper').val());
+    var $establoRepHemIniVal = Number($('#establoRepHemIni').val());
     
     $('#lblReqEstabloRepDias').css('display', 'none');
     $('#lblReqEstabloRepHuevos').css('display', 'none');
     $('#lblReqEstabloRepSuper').css('display', 'none');
+    $('#lblReqEstabloRepHemIni').css('display', 'none');
     
     if($establoRepDiasVal <= 0) {
         $('#lblReqEstabloRepDias').css('display', 'inline-block');
@@ -354,14 +361,17 @@ function getReproduccionEstablo() {
     } 
     if($establoRepSuperVal <= 0) {
         $('#lblReqEstabloRepSuper').css('display', 'inline-block');
+    }
+    if($establoRepHemIniVal <= 0) {
+        $('#lblReqEstabloRepHemIni').css('display', 'inline-block');
     } 
         
-    if($establoRepDiasVal > 0 && $establoRepHuevosVal > 0 && $establoRepSuperVal > 0) {
+    if($establoRepDiasVal > 0 && $establoRepHuevosVal > 0 && $establoRepSuperVal > 0 && $establoRepHemIniVal > 0) {
         
         var _resultsContent = '';
         var _auxTr = '';
         var _auxDias = 0;
-        var _auxCountHembras = 1;
+        var _auxCountHembras = $establoRepHemIniVal;
         var _auxCountMoscas = 0;
         var _auxPer = $establoRepSuperVal  / Number(100);
     
@@ -405,10 +415,12 @@ function getReproduccionCuerno() {
     var $cuernoRepDiasVal = Number($('#cuernoRepDias').val());
     var $cuernoRepHuevosVal = Number($('#cuernoRepHuevos').val());
     var $cuernoRepSuperVal = Number($('#cuernoRepSuper').val());
+    var $cuernoRepHemIniVal = Number($('#cuernoRepHemIni').val());
     
     $('#lblReqCuernoRepDias').css('display', 'none');
     $('#lblReqCuernoRepHuevos').css('display', 'none');
     $('#lblReqCuernoRepSuper').css('display', 'none');
+    $('#lblReqCuernoRepHemIni').css('display', 'none');
     
     if($cuernoRepDiasVal <= 0) {
         $('#lblReqCuernoRepDias').css('display', 'inline-block');
@@ -418,14 +430,17 @@ function getReproduccionCuerno() {
     } 
     if($cuernoRepSuperVal <= 0) {
         $('#lblReqCuernoRepSuper').css('display', 'inline-block');
+    }
+    if($cuernoRepHemIniVal <= 0) {
+        $('#lblReqCuernoRepHemIni').css('display', 'inline-block');
     } 
         
-    if($cuernoRepDiasVal > 0 && $cuernoRepHuevosVal > 0 && $cuernoRepSuperVal > 0) {
+    if($cuernoRepDiasVal > 0 && $cuernoRepHuevosVal > 0 && $cuernoRepSuperVal > 0 && $cuernoRepHemIniVal > 0) {
         
         var _resultsContent = '';
         var _auxTr = '';
         var _auxDias = 0;
-        var _auxCountHembras = 1;
+        var _auxCountHembras = $cuernoRepHemIniVal;
         var _auxCountMoscas = 0;
         var _auxPer = $cuernoRepSuperVal  / Number(100);
     
@@ -469,10 +484,12 @@ function getReproduccionCara() {
     var $caraRepDiasVal = Number($('#caraRepDias').val());
     var $caraRepHuevosVal = Number($('#caraRepHuevos').val());
     var $caraRepSuperVal = Number($('#caraRepSuper').val());
+    var $caraRepHemIniVal = Number($('#caraRepHemIni').val());
         
     $('#lblReqCaraRepDias').css('display', 'none');
     $('#lblReqCaraRepHuevos').css('display', 'none');
     $('#lblReqCaraRepSuper').css('display', 'none');
+    $('#lblReqCaraRepHemIni').css('display', 'none');
         
     if($caraRepDiasVal <= 0) {
         $('#lblReqCaraRepDias').css('display', 'inline-block');
@@ -482,14 +499,17 @@ function getReproduccionCara() {
     } 
     if($caraRepSuperVal <= 0) {
         $('#lblReqCaraRepSuper').css('display', 'inline-block');
+    }
+    if($caraRepHemIniVal <= 0) {
+        $('#lblReqCaraRepHemIni').css('display', 'inline-block');
     } 
             
-    if($caraRepDiasVal > 0 && $caraRepHuevosVal > 0 && $caraRepSuperVal > 0) {
+    if($caraRepDiasVal > 0 && $caraRepHuevosVal > 0 && $caraRepSuperVal > 0 && $caraRepHemIniVal > 0) {
             
         var _resultsContent = '';
         var _auxTr = '';
         var _auxDias = 0;
-        var _auxCountHembras = 1;
+        var _auxCountHembras = $caraRepHemIniVal;
         var _auxCountMoscas = 0;
         var _auxPer = $caraRepSuperVal  / Number(100);
         

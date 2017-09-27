@@ -103,15 +103,19 @@
     padding:0 2em 0 2em;
 }
 
+.domesticaRepTableForm {
+    width: 100%;
+}
+
 .domesticaRepTableForm td {
-    padding:0 3em 0 3em;
+    padding:0 2em 0 2em;
 }
 
-.domesticaRepDias, .domesticaRepHuevos, .domesticaRepSuper {
-    max-width: 60px !important;
+.domesticaRepDias, .domesticaRepHuevos, .domesticaRepSuper, .domesticaRepHemIni {
+    width: 60px !important;
 }
 
-.lblReqDomesticaRepDias, .lblReqDomesticaRepHuevos, .lblReqDomesticaRepSuper {
+.lblReqDomesticaRepDias, .lblReqDomesticaRepHuevos, .lblReqDomesticaRepSuper, .lblReqDomesticaRepHemIni {
     display: none;
     padding-top: 0.5em;
     padding-left: 0.2em;
@@ -154,15 +158,19 @@
     padding:0 2em 0 2em;
 }
 
+.establoRepTableForm {
+    width: 100%;
+}
+
 .establoRepTableForm td {
-    padding:0 3em 0 3em;
+    padding:0 2em 0 2em;
 }
 
-.establoRepDias, .establoRepHuevos, .establoRepSuper {
-    max-width: 60px !important;
+.establoRepDias, .establoRepHuevos, .establoRepSuper, .establoRepHemIni {
+    width: 60px !important;
 }
 
-.lblReqEstabloRepDias, .lblReqEstabloRepHuevos, .lblReqEstabloRepSuper {
+.lblReqEstabloRepDias, .lblReqEstabloRepHuevos, .lblReqEstabloRepSuper, .lblReqEstabloRepHemIni {
     display: none;
     padding-top: 0.5em;
     padding-left: 0.2em;
@@ -205,15 +213,19 @@
     padding:0 2em 0 2em;
 }
 
+.cuernoRepTableForm {
+    width: 100%;
+}
+
 .cuernoRepTableForm td {
-    padding:0 3em 0 3em;
+    padding:0 2em 0 2em;
 }
 
-.cuernoRepDias, .cuernoRepHuevos, .cuernoRepSuper {
-    max-width: 60px !important;
+.cuernoRepDias, .cuernoRepHuevos, .cuernoRepSuper, .cuernoRepHemIni {
+    width: 60px !important;
 }
 
-.lblReqCuernoRepDias, .lblReqCuernoRepHuevos, .lblReqCuernoRepSuper {
+.lblReqCuernoRepDias, .lblReqCuernoRepHuevos, .lblReqCuernoRepSuper, .lblReqCuernoRepHemIni {
     display: none;
     padding-top: 0.5em;
     padding-left: 0.2em;
@@ -256,15 +268,19 @@
     padding:0 2em 0 2em;
 }
 
+.caraRepTableForm {
+    width: 100%;
+}
+
 .caraRepTableForm td {
-    padding:0 3em 0 3em;
+    padding:0 2em 0 2em;
 }
 
-.caraRepDias, .caraRepHuevos, .caraRepSuper {
-    max-width: 60px !important;
+.caraRepDias, .caraRepHuevos, .caraRepSuper, .caraRepHemIni {
+    width: 60px !important;
 }
 
-.lblReqCaraRepDias, .lblReqCaraRepHuevos, .lblReqCaraRepSuper {
+.lblReqCaraRepDias, .lblReqCaraRepHuevos, .lblReqCaraRepSuper, .lblReqCaraRepHemIni {
     display: none;
     padding-top: 0.5em;
     padding-left: 0.2em;
