@@ -335,10 +335,10 @@ function getReproduccionDomestica() {
         window_width = Number($(window).width());
         _auxCountMoscasLength = Number(_auxCountMoscas).toLocaleString().length;
 
-        if(window_width == 768 && _auxCountMoscasLength >19) {
+        if(window_width == 768 && Number(_auxCountMoscasLength) > 19) {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
-        } else if(window_width == 768 && _auxCountMoscasLength < 20) {
+        } else if(window_width == 768 && Number(_auxCountMoscasLength) < 20) {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
         }
