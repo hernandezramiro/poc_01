@@ -260,6 +260,9 @@ function calculadorAreasDeleteResult(index) {
 // CAPACIDAD REPRODUCTIVA MOSCAS - BEGINS
 ///////////////////////////
 
+var window_width = 0;
+var _auxCountMoscasLength = 0;
+
 function getReproduccionDomestica() {
 
     var auxRows = 13;
@@ -272,7 +275,7 @@ function getReproduccionDomestica() {
         }
     }
 
-    $('#tableReproduccionDomestica').css('display', 'none');
+    $('#tableResultsDomestica').css('display', 'none');
 
     var $domRepDiasVal = Number($('#domesticaRepDias').val());
     var $domRepHuevosVal = Number($('#domesticaRepHuevos').val());
@@ -300,7 +303,7 @@ function getReproduccionDomestica() {
     if($domRepDiasVal > 0 && $domRepHuevosVal > 0 && $domRepSuperVal > 0 && $domesticaRepHemIniVal > 0) {
         var _auxPer = $domRepSuperVal  / Number(100);
         
-        var _resultsContent = '';
+        var _resultsContent = '<tbody>';//
         var _auxTr = '';
         var _auxDias = 0;
         var _auxCountHembras = $domesticaRepHemIniVal;
@@ -312,11 +315,11 @@ function getReproduccionDomestica() {
             _auxCountMoscas = _auxCountHembras * $domRepHuevosVal * _auxPer;
 
             _auxTr = '<tr id="rowDomestica' + i + '">'
-                + '<td>' + _auxDias + '</td>'
-                + '<td>' + _auxCountHembras.toLocaleString('en-US') + '</td>'
-                + '<td>' + _auxCountMoscas.toLocaleString('en-US') + '</td>'
-                + '<td>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
-                + '<td>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
+                + '<th><b class="ui-table-cell-label">Días</b>' + _auxDias + '</th>'//
+                + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + _auxCountHembras.toLocaleString('en-US') + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas nacidas</b>' + _auxCountMoscas.toLocaleString('en-US') + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas macho</b>' + Number((_auxCountMoscas*0.5)).toLocaleString('en-US') + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
                 + '</tr>';
             
             _resultsContent = _resultsContent + _auxTr;
@@ -324,8 +327,40 @@ function getReproduccionDomestica() {
             _auxCountHembras = (_auxCountMoscas*0.5);
         }
 
-        $('#tableReproduccionDomestica').append(_resultsContent).enhanceWithin();
-        $('#tableReproduccionDomestica').css('display', 'block');
+        _resultsContent = _resultsContent + '</tbody>'; //
+
+        //$('#tableReproduccionDomestica').append(_resultsContent).enhanceWithin();
+        //$('#tableReproduccionDomestica').css('display', 'block');
+
+        window_width = Number($(window).width());
+        _auxCountMoscasLength = Number(_auxCountMoscas).toLocaleString().length;
+
+        if(window_width == 768 && _auxCountMoscasLength >=20) {
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
+        } else if(window_width == 768 && _auxCountMoscasLength <= 19) {
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
+        }
+        if(window_width == 1024 && _auxCountMoscasLength >=29) {
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
+        } else if(window_width == 1024 && _auxCountMoscasLength <= 28) {
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
+        } else {
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
+        }
+
+
+        console.log(window_width);
+        console.log(_auxCountMoscas);
+        console.log(_auxCountMoscasLength);
+
+        
+        $('#tableResultsDomestica').append(_resultsContent).enhanceWithin();
+        $('#tableResultsDomestica').css('display', 'block');
     }
 }
 

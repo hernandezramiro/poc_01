@@ -933,3 +933,55 @@
 /*//////////////////////////
 // IMPACTO ECONOMICO MOSCAS - ENDS
 //////////////////////////*/
+
+
+.tableResultsDomesticaAmplia td, .tableResultsDomesticaAmplia th, .tableResultsDomesticaAmplia tbody th, 
+.tableResultsDomesticaAmplia tbody td, .tableResultsDomesticaAmplia thead td, .tableResultsDomesticaAmplia thead th {
+    display: table-cell !important;
+    margin: 0 !important;
+}
+
+.tableResultsDomesticaAmplia td .ui-table-cell-label, .tableResultsDomesticaAmplia th .ui-table-cell-label {
+    display: none !important;
+}
+
+
+.tableResultsDomesticaCompacta thead td, .tableResultsDomesticaCompacta thead th {
+    display: none !important;
+    margin: 0 !important;
+}
+
+.tableResultsDomesticaCompacta td, .tableResultsDomesticaCompacta th, .tableResultsDomesticaCompacta tbody th, 
+.tableResultsDomesticaCompacta tbody td {
+    display: flex !important;
+    margin: 0 !important;
+}
+
+.tableResultsDomesticaCompacta td .ui-table-cell-label, .tableResultsDomesticaCompacta th .ui-table-cell-label {
+    display: block !important;
+}
+
+
+
+.tableResultsDomesticaGeneral thead th,
+.tableResultsDomesticaGeneral tbody tr:last-child {
+    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.tableResultsDomesticaGeneral tbody th,
+.tableResultsDomesticaGeneral tbody td {
+    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.tableResultsDomesticaGeneral tbody tr:last-child th,
+.tableResultsDomesticaGeneral tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.tableResultsDomesticaGeneral tbody tr:nth-child(odd) td,
+.tableResultsDomesticaGeneral tbody tr:nth-child(odd) th {
+    background-color: #eeeeee; /* non-RGBA fallback  */
+    background-color: rgba(0,0,0,.04);
+}
