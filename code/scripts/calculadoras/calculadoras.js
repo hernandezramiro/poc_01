@@ -262,6 +262,9 @@ function calculadorAreasDeleteResult(index) {
 
 var window_width = 0;
 var _auxCountMoscasDomesticaLength = 0;
+var _auxCountMoscasEstabloLength = 0;
+var _auxCountMoscasCuernoLength = 0;
+var _auxCountMoscasCaraLength = 0;
 
 function formatThousands(num) {
     var values = num.toString().split('.');
@@ -272,8 +275,10 @@ $(window).on('resize', function(){
     window_width = Number($(window).width());
 
     resizeDomesticaTable(window_width, _auxCountMoscasDomesticaLength);
+    resizeEstabloTable(window_width, _auxCountMoscasEstabloLength);
+    resizeCuernoTable(window_width, _auxCountMoscasCuernoLength);
+    resizeCaraTable(window_width, _auxCountMoscasCaraLength);
 
-    
 });
 
 function resizeDomesticaTable(window_width, countDomesticasMoscas) {
@@ -284,8 +289,7 @@ function resizeDomesticaTable(window_width, countDomesticasMoscas) {
         } else if(window_width == 768 && Number(countDomesticasMoscas) <= 19) {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
-        }
-        else if(window_width == 1024 && countDomesticasMoscas >= 29) {
+        } else if(window_width == 1024 && countDomesticasMoscas >= 29) {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
         } else if(window_width == 1024 && countDomesticasMoscas <= 28) {
@@ -294,6 +298,72 @@ function resizeDomesticaTable(window_width, countDomesticasMoscas) {
         } else {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
+        }
+    }
+}
+
+function resizeEstabloTable(window_width, countEstabloMoscas) {
+
+    if(window_width > 0 && countEstabloMoscas > 0) {
+        if(window_width == 768 && Number(countEstabloMoscas) >= 20) {
+            $('#tableResultsEstablo').removeClass('tableResultsEstabloAmplia')
+            $('#tableResultsEstablo').addClass('tableResultsEstabloCompacta');
+        } else if(window_width == 768 && Number(countEstabloMoscas) <= 19) {
+            $('#tableResultsEstablo').removeClass('tableResultsEstabloCompacta')
+            $('#tableResultsEstablo').addClass('tableResultsEstabloAmplia');
+        } else if(window_width == 1024 && countEstabloMoscas >= 29) {
+            $('#tableResultsEstablo').removeClass('tableResultsEstabloAmplia')
+            $('#tableResultsEstablo').addClass('tableResultsEstabloCompacta');
+        } else if(window_width == 1024 && countEstabloMoscas <= 28) {
+            $('#tableResultsEstablo').removeClass('tableResultsEstabloCompacta')
+            $('#tableResultsEstablo').addClass('tableResultsEstabloAmplia');
+        } else {
+            $('#tableResultsEstablo').removeClass('tableResultsEstabloCompacta')
+            $('#tableResultsEstablo').addClass('tableResultsEstabloAmplia');
+        }
+    }
+}
+
+function resizeCuernoTable(window_width, countCuernoMoscas) {
+    
+    if(window_width > 0 && countCuernoMoscas > 0) {
+        if(window_width == 768 && Number(countCuernoMoscas) >= 20) {
+            $('#tableResultsCuerno').removeClass('tableResultsCuernoAmplia')
+            $('#tableResultsCuerno').addClass('tableResultsCuernoCompacta');
+        } else if(window_width == 768 && Number(countCuernoMoscas) <= 19) {
+            $('#tableResultsCuerno').removeClass('tableResultsCuernoCompacta')
+            $('#tableResultsCuerno').addClass('tableResultsCuernoAmplia');
+        } else if(window_width == 1024 && countCuernoMoscas >= 29) {
+            $('#tableResultsCuerno').removeClass('tableResultsCuernoAmplia')
+            $('#tableResultsCuerno').addClass('tableResultsCuernoCompacta');
+        } else if(window_width == 1024 && countCuernoMoscas <= 28) {
+            $('#tableResultsCuerno').removeClass('tableResultsCuernoCompacta')
+            $('#tableResultsCuerno').addClass('tableResultsCuernoAmplia');
+        } else {
+            $('#tableResultsCuerno').removeClass('tableResultsCuernoCompacta')
+            $('#tableResultsCuerno').addClass('tableResultsCuernoAmplia');
+        }
+    }
+}
+
+function resizeCaraTable(window_width, countCaraMoscas) {
+    
+    if(window_width > 0 && countCaraMoscas > 0) {
+        if(window_width == 768 && Number(countCaraMoscas) >= 20) {
+            $('#tableResultsCara').removeClass('tableResultsCaraAmplia')
+            $('#tableResultsCara').addClass('tableResultsCaraCompacta');
+        } else if(window_width == 768 && Number(countCaraMoscas) <= 19) {
+            $('#tableResultsCara').removeClass('tableResultsCaraCompacta')
+            $('#tableResultsCara').addClass('tableResultsCaraAmplia');
+        } else if(window_width == 1024 && countCaraMoscas >= 29) {
+            $('#tableResultsCara').removeClass('tableResultsCaraAmplia')
+            $('#tableResultsCara').addClass('tableResultsCaraCompacta');
+        } else if(window_width == 1024 && countCaraMoscas <= 28) {
+            $('#tableResultsCara').removeClass('tableResultsCaraCompacta')
+            $('#tableResultsCara').addClass('tableResultsCaraAmplia');
+        } else {
+            $('#tableResultsCara').removeClass('tableResultsCaraCompacta')
+            $('#tableResultsCara').addClass('tableResultsCaraAmplia');
         }
     }
 }
@@ -336,13 +406,13 @@ function getReproduccionDomestica() {
     } 
     
     if($domRepDiasVal > 0 && $domRepHuevosVal > 0 && $domRepSuperVal > 0 && $domesticaRepHemIniVal > 0) {
-        var _auxPer = $domRepSuperVal  / Number(100);
-        
+
         var _resultsContent = '';
         var _auxTr = '';
         var _auxDias = 0;
         var _auxCountHembras = $domesticaRepHemIniVal;
         var _auxCountMoscas = 0;
+        var _auxPer = $domRepSuperVal  / Number(100);
 
         for(i=1; i < auxRows; i++) {
             _auxDias = $domRepDiasVal * i;
@@ -353,13 +423,13 @@ function getReproduccionDomestica() {
                 + '<th><b class="ui-table-cell-label">Días</b>' + _auxDias + '</th>'//
                 + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + formatThousands(_auxCountHembras) + '</td>'
                 + '<td><b class="ui-table-cell-label">Moscas nacidas</b>' + formatThousands(_auxCountMoscas) + '</td>'
-                + '<td><b class="ui-table-cell-label">Moscas macho</b>' + formatThousands((_auxCountMoscas*0.5)) + '</td>'
-                + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + formatThousands((_auxCountMoscas*0.5)) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas macho</b>' + formatThousands((_auxCountMoscas * 0.5)) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + formatThousands((_auxCountMoscas * 0.5)) + '</td>'
                 + '</tr>';
             
             _resultsContent = _resultsContent + _auxTr;
             _auxTr = '';
-            _auxCountHembras = (_auxCountMoscas*0.5);
+            _auxCountHembras = (_auxCountMoscas * 0.5);
         }
 
         window_width = Number($(window).width());
@@ -384,7 +454,7 @@ function getReproduccionEstablo() {
         }
     }
     
-    $('#tableReproduccionEstablo').css('display', 'none');
+    $('#tableResultsEstablo').css('display', 'none');
     
     var $establoRepDiasVal = Number($('#establoRepDias').val());
     var $establoRepHuevosVal = Number($('#establoRepHuevos').val());
@@ -424,20 +494,25 @@ function getReproduccionEstablo() {
             _auxCountMoscas = _auxCountHembras * $establoRepHuevosVal * _auxPer;
     
             _auxTr = '<tr id="rowEstablo' + i + '">'
-                + '<td>' + _auxDias + '</td>'
-                + '<td>' + _auxCountHembras.toLocaleString('en-US') + '</td>'
-                + '<td>' + _auxCountMoscas.toLocaleString('en-US') + '</td>'
-                + '<td>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
-                + '<td>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
+                + '<th><b class="ui-table-cell-label">Días</b>' + _auxDias + '</th>'
+                + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + formatThousands(_auxCountHembras) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas nacidas</b>' + formatThousands(_auxCountMoscas) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas macho</b>' + formatThousands((_auxCountMoscas * 0.5)) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + formatThousands((_auxCountMoscas * 0.5)) + '</td>'
                 + '</tr>';
                 
             _resultsContent = _resultsContent + _auxTr;
             _auxTr = '';
-            _auxCountHembras = (_auxCountMoscas*0.5);
+            _auxCountHembras = (_auxCountMoscas * 0.5);
         }
-    
-        $('#tableReproduccionEstablo').append(_resultsContent).enhanceWithin();
-        $('#tableReproduccionEstablo').css('display', 'block');
+
+        window_width = Number($(window).width());
+        _auxCountMoscasEstabloLength = formatThousands(_auxCountMoscas).length;
+
+        resizeEstabloTable(window_width, _auxCountMoscasEstabloLength);
+        
+        $('#tableResultsEstablo').append(_resultsContent).enhanceWithin();
+        $('#tableResultsEstablo').css('display', 'table');
     }
 }
 
@@ -453,7 +528,7 @@ function getReproduccionCuerno() {
         }
     }
     
-    $('#tableReproduccionCuerno').css('display', 'none');
+    $('#tableResultsCuerno').css('display', 'none');
     
     var $cuernoRepDiasVal = Number($('#cuernoRepDias').val());
     var $cuernoRepHuevosVal = Number($('#cuernoRepHuevos').val());
@@ -493,20 +568,25 @@ function getReproduccionCuerno() {
             _auxCountMoscas = _auxCountHembras * $cuernoRepHuevosVal * _auxPer;
     
             _auxTr = '<tr id="rowCuerno' + i + '">'
-                + '<td>' + _auxDias + '</td>'
-                + '<td>' + _auxCountHembras.toLocaleString('en-US') + '</td>'
-                + '<td>' + _auxCountMoscas.toLocaleString('en-US') + '</td>'
-                + '<td>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
-                + '<td>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
+                + '<th><b class="ui-table-cell-label">Días</b>' + _auxDias + '</th>'
+                + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + formatThousands(_auxCountHembras) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas nacidas</b>' + formatThousands(_auxCountMoscas) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas macho</b>' + formatThousands((_auxCountMoscas * 0.5)) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + formatThousands((_auxCountMoscas * 0.5)) + '</td>'
                 + '</tr>';
                 
             _resultsContent = _resultsContent + _auxTr;
             _auxTr = '';
-            _auxCountHembras = (_auxCountMoscas*0.5);
+            _auxCountHembras = (_auxCountMoscas * 0.5);
         }
-    
-        $('#tableReproduccionCuerno').append(_resultsContent).enhanceWithin();
-        $('#tableReproduccionCuerno').css('display', 'block');
+
+        window_width = Number($(window).width());
+        _auxCountMoscasCuernoLength = formatThousands(_auxCountMoscas).length;
+
+        resizeCuernoTable(window_width, _auxCountMoscasCuernoLength);
+        
+        $('#tableResultsCuerno').append(_resultsContent).enhanceWithin();
+        $('#tableResultsCuerno').css('display', 'table');
     }
 }
 
@@ -522,7 +602,7 @@ function getReproduccionCara() {
         }
     }
         
-    $('#tableReproduccionCara').css('display', 'none');
+    $('#tableResultsCara').css('display', 'none');
         
     var $caraRepDiasVal = Number($('#caraRepDias').val());
     var $caraRepHuevosVal = Number($('#caraRepHuevos').val());
@@ -562,20 +642,25 @@ function getReproduccionCara() {
             _auxCountMoscas = _auxCountHembras * $caraRepHuevosVal * _auxPer;
         
             _auxTr = '<tr id="rowCara' + i + '">'
-                + '<td>' + _auxDias + '</td>'
-                + '<td>' + _auxCountHembras.toLocaleString('en-US') + '</td>'
-                + '<td>' + _auxCountMoscas.toLocaleString('en-US') + '</td>'
-                + '<td>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
-                + '<td>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
+                + '<th><b class="ui-table-cell-label">Días</b>' + _auxDias + '</th>'
+                + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + formatThousands(_auxCountHembras) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas nacidas</b>' + formatThousands(_auxCountMoscas) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas macho</b>' + formatThousands((_auxCountMoscas * 0.5)) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + formatThousands((_auxCountMoscas * 0.5)) + '</td>'
                 + '</tr>';
                     
             _resultsContent = _resultsContent + _auxTr;
             _auxTr = '';
-            _auxCountHembras = (_auxCountMoscas*0.5);
+            _auxCountHembras = (_auxCountMoscas * 0.5);
         }
+
+        window_width = Number($(window).width());
+        _auxCountMoscasCaraLength = formatThousands(_auxCountMoscas).length;
+
+        resizeCaraTable(window_width, _auxCountMoscasCaraLength);
         
-        $('#tableReproduccionCara').append(_resultsContent).enhanceWithin();
-        $('#tableReproduccionCara').css('display', 'block');
+        $('#tableResultsCara').append(_resultsContent).enhanceWithin();
+        $('#tableResultsCara').css('display', 'table');
     }
 }
 
