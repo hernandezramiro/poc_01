@@ -261,7 +261,37 @@ function calculadorAreasDeleteResult(index) {
 ///////////////////////////
 
 var window_width = 0;
-var _auxCountMoscasLength = 0;
+var _auxCountMoscasDomesticaLength = 0;
+
+$(window).on('resize', function(){
+    console.log('Resize');
+    window_width = Number($(window).width());
+
+    if(window_width > 0 && _auxCountMoscasDomesticaLength > 0) {
+        if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) >= 20) {
+            console.log('768-19');
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
+        } else if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) <= 19) {
+            console.log('768-20');
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
+        }
+        else if(window_width == 1024 && _auxCountMoscasDomesticaLength >= 29) {
+            console.log('1024-29');
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
+        } else if(window_width == 1024 && _auxCountMoscasDomesticaLength <= 28) {
+            console.log('1024-28');
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
+        } else {
+            console.log('else');
+            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
+            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
+        }
+    }
+});
 
 function getReproduccionDomestica() {
 
@@ -333,22 +363,22 @@ function getReproduccionDomestica() {
         //$('#tableReproduccionDomestica').css('display', 'block');
 
         window_width = Number($(window).width());
-        _auxCountMoscasLength = Number(_auxCountMoscas).toLocaleString().length;
+        _auxCountMoscasDomesticaLength = Number(_auxCountMoscas).toLocaleString().length;
 
-        if(window_width == 768 && Number(_auxCountMoscasLength) >= 20) {
+        if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) >= 20) {
             console.log('768-19');
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
-        } else if(window_width == 768 && Number(_auxCountMoscasLength) <= 19) {
+        } else if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) <= 19) {
             console.log('768-20');
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
         }
-        else if(window_width == 1024 && _auxCountMoscasLength >= 29) {
+        else if(window_width == 1024 && _auxCountMoscasDomesticaLength >= 29) {
             console.log('1024-29');
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
-        } else if(window_width == 1024 && _auxCountMoscasLength <= 28) {
+        } else if(window_width == 1024 && _auxCountMoscasDomesticaLength <= 28) {
             console.log('1024-28');
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
@@ -357,12 +387,6 @@ function getReproduccionDomestica() {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
         }
-
-
-        console.log(window_width);
-        console.log(_auxCountMoscas);
-        console.log(_auxCountMoscasLength);
-
         
         $('#tableResultsDomestica').append(_resultsContent).enhanceWithin();
         $('#tableResultsDomestica').css('display', 'block');
