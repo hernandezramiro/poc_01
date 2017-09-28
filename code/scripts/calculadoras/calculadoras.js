@@ -346,7 +346,7 @@ function getReproduccionDomestica() {
 
             _auxTr = '<tr id="rowDomestica' + i + '">'
                 + '<th><b class="ui-table-cell-label">Días</b>' + _auxDias + '</th>'//
-                + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + _auxCountHembras.toLocaleString('en-US') + '</td>'
+                + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + _auxCountHembras.toString().replace(/.(?=(?:.{3})+$)/g, '$&,') + '</td>'
                 + '<td><b class="ui-table-cell-label">Moscas nacidas</b>' + _auxCountMoscas.toLocaleString('en-US') + '</td>'
                 + '<td><b class="ui-table-cell-label">Moscas macho</b>' + Number((_auxCountMoscas*0.5)).toLocaleString('en-US') + '</td>'
                 + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
