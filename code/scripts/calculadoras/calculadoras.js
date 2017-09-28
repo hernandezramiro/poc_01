@@ -368,7 +368,7 @@ function getReproduccionDomestica() {
         //$('#tableReproduccionDomestica').css('display', 'block');
 
         window_width = Number($(window).width());
-        _auxCountMoscasDomesticaLength = Number(_auxCountMoscas).toLocaleString().length;
+        _auxCountMoscasDomesticaLength = formatThousands(_auxCountMoscas).length;
 
         if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) >= 20) {
             console.log('768-19');
