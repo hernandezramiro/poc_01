@@ -263,6 +263,11 @@ function calculadorAreasDeleteResult(index) {
 var window_width = 0;
 var _auxCountMoscasDomesticaLength = 0;
 
+function formatThousands(num) {
+    var values = num.toString().split('.');
+    return values[0].replace(/.(?=(?:.{3})+$)/g, '$&,') + ( values.length == 2 ? '.' + values[1] : '' )
+}
+
 $(window).on('resize', function(){
     console.log('Resize');
     window_width = Number($(window).width());
@@ -346,10 +351,10 @@ function getReproduccionDomestica() {
 
             _auxTr = '<tr id="rowDomestica' + i + '">'
                 + '<th><b class="ui-table-cell-label">Días</b>' + _auxDias + '</th>'//
-                + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + _auxCountHembras.toString().replace(/.(?=(?:.{3})+$)/g, '$&,') + '</td>'
-                + '<td><b class="ui-table-cell-label">Moscas nacidas</b>' + _auxCountMoscas.toLocaleString('en-US') + '</td>'
-                + '<td><b class="ui-table-cell-label">Moscas macho</b>' + Number((_auxCountMoscas*0.5)).toLocaleString('en-US') + '</td>'
-                + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + (_auxCountMoscas*0.5).toLocaleString('en-US') + '</td>'
+                + '<td><b class="ui-table-cell-label">Hembras iniciales</b>' + formatThousands(_auxCountHembras) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas nacidas</b>' + formatThousands(_auxCountMoscas) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas macho</b>' + formatThousands((_auxCountMoscas*0.5)) + '</td>'
+                + '<td><b class="ui-table-cell-label">Moscas hembra</b>' + formatThousands((_auxCountMoscas*0.5)) + '</td>'
                 + '</tr>';
             
             _resultsContent = _resultsContent + _auxTr;
