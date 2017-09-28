@@ -269,34 +269,34 @@ function formatThousands(num) {
 }
 
 $(window).on('resize', function(){
-    console.log('Resize');
     window_width = Number($(window).width());
 
-    if(window_width > 0 && _auxCountMoscasDomesticaLength > 0) {
-        if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) >= 20) {
-            console.log('768-19');
+    resizeDomesticaTable(window_width, _auxCountMoscasDomesticaLength);
+
+    
+});
+
+function resizeDomesticaTable(window_width, countDomesticasMoscas) {
+    if(window_width > 0 && countDomesticasMoscas > 0) {
+        if(window_width == 768 && Number(countDomesticasMoscas) >= 20) {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
-        } else if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) <= 19) {
-            console.log('768-20');
+        } else if(window_width == 768 && Number(countDomesticasMoscas) <= 19) {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
         }
-        else if(window_width == 1024 && _auxCountMoscasDomesticaLength >= 29) {
-            console.log('1024-29');
+        else if(window_width == 1024 && countDomesticasMoscas >= 29) {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
-        } else if(window_width == 1024 && _auxCountMoscasDomesticaLength <= 28) {
-            console.log('1024-28');
+        } else if(window_width == 1024 && countDomesticasMoscas <= 28) {
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
         } else {
-            console.log('else');
             $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
             $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
         }
     }
-});
+}
 
 function getReproduccionDomestica() {
 
@@ -338,7 +338,7 @@ function getReproduccionDomestica() {
     if($domRepDiasVal > 0 && $domRepHuevosVal > 0 && $domRepSuperVal > 0 && $domesticaRepHemIniVal > 0) {
         var _auxPer = $domRepSuperVal  / Number(100);
         
-        var _resultsContent = '<tbody>';//
+        var _resultsContent = '';
         var _auxTr = '';
         var _auxDias = 0;
         var _auxCountHembras = $domesticaRepHemIniVal;
@@ -362,39 +362,13 @@ function getReproduccionDomestica() {
             _auxCountHembras = (_auxCountMoscas*0.5);
         }
 
-        _resultsContent = _resultsContent + '</tbody>'; //
-
-        //$('#tableReproduccionDomestica').append(_resultsContent).enhanceWithin();
-        //$('#tableReproduccionDomestica').css('display', 'block');
-
         window_width = Number($(window).width());
         _auxCountMoscasDomesticaLength = formatThousands(_auxCountMoscas).length;
 
-        if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) >= 20) {
-            console.log('768-19');
-            $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
-            $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
-        } else if(window_width == 768 && Number(_auxCountMoscasDomesticaLength) <= 19) {
-            console.log('768-20');
-            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
-            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
-        }
-        else if(window_width == 1024 && _auxCountMoscasDomesticaLength >= 29) {
-            console.log('1024-29');
-            $('#tableResultsDomestica').removeClass('tableResultsDomesticaAmplia')
-            $('#tableResultsDomestica').addClass('tableResultsDomesticaCompacta');
-        } else if(window_width == 1024 && _auxCountMoscasDomesticaLength <= 28) {
-            console.log('1024-28');
-            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
-            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
-        } else {
-            console.log('else');
-            $('#tableResultsDomestica').removeClass('tableResultsDomesticaCompacta')
-            $('#tableResultsDomestica').addClass('tableResultsDomesticaAmplia');
-        }
+        resizeDomesticaTable(window_width, _auxCountMoscasDomesticaLength);
         
         $('#tableResultsDomestica').append(_resultsContent).enhanceWithin();
-        $('#tableResultsDomestica').css('display', 'block');
+        $('#tableResultsDomestica').css('display', 'table');
     }
 }
 

@@ -70,39 +70,6 @@
 
 /*MOSCA DOMESTICA*/
 
-.tableReproduccionDomestica {
-    font-family: Calibri;
-    border-collapse: collapse;
-    width: 100%;
-    table-layout:fixed;
-    display: none;
-    /*padding-right:10px;*/
-}
-
-.tableReproduccionDomestica th {
-    background: #4F81BC;
-    color: #ffffff;
-    font-weight: normal;
-}
-
-.tableReproduccionDomestica td, .tableReproduccionDomestica th {
-    border: 1px solid #ffffff;
-    text-align: center;
-    padding: 3px;
-}
-
-.tableReproduccionDomestica tr:nth-child(odd) {
-    background-color: #E9ECF5;
-}
-
-.tableReproduccionDomestica tr:nth-child(even) {
-    background-color: #D1D7E7;
-}
-
-.tableReproduccionDomestica td {
-    padding:0 2em 0 2em;
-}
-
 .domesticaRepTableForm {
     width: 100%;
 }
@@ -934,100 +901,6 @@
 // IMPACTO ECONOMICO MOSCAS - ENDS
 //////////////////////////*/
 
-
-.tableResultsDomesticaAmplia td, .tableResultsDomesticaAmplia th, .tableResultsDomesticaAmplia tbody th, 
-.tableResultsDomesticaAmplia tbody td, .tableResultsDomesticaAmplia thead td, .tableResultsDomesticaAmplia thead th {
-    display: table-cell !important;
-    margin: 0 !important;
-}
-
-.tableResultsDomesticaAmplia td .ui-table-cell-label, .tableResultsDomesticaAmplia th .ui-table-cell-label {
-    display: none !important;
-}
-
-
-.tableResultsDomesticaCompacta thead td, .tableResultsDomesticaCompacta thead th {
-    display: none !important;
-    margin: 0 !important;
-}
-
-/*****************************************/
-
-.tableResultsDomesticaCompacta tbody tr {
-    /*display: table-cell;*/
-    display: inline-table;
-    width: 50%;
-}
-
-.tableResultsDomesticaCompacta tr:nth-child(2n+1) {
-    background-color:#d6d6d6;
-}
-
-.tableResultsDomesticaCompacta tr:nth-of-type(2n+2) {
-    background-color:#eeeeee;
-}
-
-.tableResultsDomesticaCompacta tr:nth-of-type(2n+3) {
-    background-color:#eeeeee;
-}
-
-.tableResultsDomesticaCompacta tr:nth-child(2n+4) {
-    background-color:#d6d6d6;
-}
-
-.tableResultsDomesticaCompacta tr:nth-child(2n+5) {
-    background-color:#d6d6d6;
-}
-
-.tableResultsDomesticaCompacta tr:nth-of-type(2n+6) {
-    background-color:#eeeeee;
-}
-
-.tableResultsDomesticaCompacta tr:nth-of-type(2n+7) {
-    background-color:#eeeeee;
-}
-
-.tableResultsDomesticaCompacta tr:nth-child(2n+8) {
-    background-color:#d6d6d6;
-}
-
-.tableResultsDomesticaCompacta tr:nth-child(2n+9) {
-    background-color:#d6d6d6;
-}
-
-.tableResultsDomesticaCompacta tr:nth-of-type(2n+10) {
-    background-color:#eeeeee;
-}
-
-.tableResultsDomesticaCompacta tr:nth-of-type(2n+11) {
-    background-color:#eeeeee;
-}
-
-.tableResultsDomesticaCompacta tr:nth-child(2n+12) {
-    background-color:#d6d6d6;
-}
-
-.c:nth-child(n+3) {
-    display: table-cell;
-    position: relative;
-    left: -50%;
-    top: 60px;
-  }
-
-/*****************************************/
-
-.tableResultsDomesticaCompacta td, .tableResultsDomesticaCompacta th, .tableResultsDomesticaCompacta tbody th, 
-.tableResultsDomesticaCompacta tbody td {
-    display: flex !important;
-    margin: 0 !important;
-}
-
-.tableResultsDomesticaCompacta td .ui-table-cell-label, .tableResultsDomesticaCompacta th .ui-table-cell-label {
-    display: block !important;
-}
-
-
-
 .tableResultsDomesticaGeneral thead th,
 .tableResultsDomesticaGeneral tbody tr:last-child {
     border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
@@ -1050,3 +923,82 @@
     background-color: #eeeeee; /* non-RGBA fallback  */
     background-color: rgba(0,0,0,.04);
 }
+
+.tableResultsDomesticaAmplia td, .tableResultsDomesticaAmplia th, .tableResultsDomesticaAmplia tbody th, 
+.tableResultsDomesticaAmplia tbody td, .tableResultsDomesticaAmplia thead td, .tableResultsDomesticaAmplia thead th {
+    display: table-cell !important;
+    margin: 0 !important;
+}
+
+.tableResultsDomesticaAmplia td .ui-table-cell-label, .tableResultsDomesticaAmplia th .ui-table-cell-label {
+    display: none !important;
+}
+
+.tableResultsDomesticaCompacta thead td, .tableResultsDomesticaCompacta thead th {
+    display: none !important;
+    margin: 0 !important;
+}
+
+.tableResultsDomesticaCompacta tbody tr {
+    display: inline-table;
+    width: 50%;
+}
+
+.tableResultsDomesticaCompacta tr:nth-child(1) {
+    background-color:#d6d6d6;
+}
+
+.tableResultsDomesticaCompacta tr:nth-of-type(2) {
+    background-color:#eeeeee;
+}
+
+.tableResultsDomesticaCompacta tr:nth-of-type(3) {
+    background-color:#eeeeee;
+}
+
+.tableResultsDomesticaCompacta tr:nth-child(4) {
+    background-color:#d6d6d6;
+}
+
+.tableResultsDomesticaCompacta tr:nth-child(5) {
+    background-color:#d6d6d6;
+}
+
+.tableResultsDomesticaCompacta tr:nth-of-type(6) {
+    background-color:#eeeeee;
+}
+
+.tableResultsDomesticaCompacta tr:nth-of-type(7) {
+    background-color:#eeeeee;
+}
+
+.tableResultsDomesticaCompacta tr:nth-child(8) {
+    background-color:#d6d6d6;
+}
+
+.tableResultsDomesticaCompacta tr:nth-child(9) {
+    background-color:#d6d6d6;
+}
+
+.tableResultsDomesticaCompacta tr:nth-of-type(10) {
+    background-color:#eeeeee;
+}
+
+.tableResultsDomesticaCompacta tr:nth-of-type(11) {
+    background-color:#eeeeee;
+}
+
+.tableResultsDomesticaCompacta tr:nth-child(12) {
+    background-color:#d6d6d6;
+}
+
+.tableResultsDomesticaCompacta td, .tableResultsDomesticaCompacta th, .tableResultsDomesticaCompacta tbody th, 
+.tableResultsDomesticaCompacta tbody td {
+    display: flex !important;
+    margin: 0 !important;
+}
+
+.tableResultsDomesticaCompacta td .ui-table-cell-label, .tableResultsDomesticaCompacta th .ui-table-cell-label {
+    display: block !important;
+}
+
