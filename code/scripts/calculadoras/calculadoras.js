@@ -677,6 +677,47 @@ var globalResultRabon_02 = 0;
 var globalRabonPrecio = 0;
 var globalRabonAlimentoFinal_Kg = 0;
 var globalRabonNoAnimales = 0;
+var globalExplotacionNombre = '';
+var globalExplotacionContacto = '';
+var globalRabonFecha = '';
+var globalBayerAsesor = '';
+
+function getExplotacionInfo() {
+    var $txtExplotacionNombreVal = $('#txtExplotacionNombre').val().trim();
+    var $txtExplotacionContactoVal = $('#txtExplotacionContacto').val().trim();
+    var $txtRabonFechaVal = $('#txtRabonFecha').val().trim();
+    var $txtBayerAsesorVal = $('#txtBayerAsesor').val().trim();
+        
+    $('#reqTxtExplotacionNombre').css('display', 'none');
+    $('#reqTxtExplotacionContacto').css('display', 'none');
+    $('#reqTxtRabonFecha').css('display', 'none');
+    $('#reqTxtBayerAsesor').css('display', 'none');
+        
+    if($txtExplotacionNombreVal == "") {
+        $('#reqTxtExplotacionNombre').css('display', 'inline-block');
+    }
+    if($txtExplotacionContactoVal == "") {
+        $('#reqTxtExplotacionContacto').css('display', 'inline-block');
+    }
+    if($txtRabonFechaVal == "") {
+        $('#reqTxtRabonFecha').css('display', 'inline-block');
+    }
+    if($txtBayerAsesorVal == "") {
+        $('#reqTxtBayerAsesor').css('display', 'inline-block');
+    }
+    
+    if($txtExplotacionNombreVal != "" && $txtExplotacionContactoVal != "" && $txtRabonFechaVal != "" && $txtBayerAsesorVal != "") {
+        globalExplotacionNombre = $txtExplotacionNombreVal;
+        globalExplotacionContacto = $txtExplotacionContactoVal;
+        globalRabonFecha = $txtRabonFechaVal;
+        globalBayerAsesor = $txtBayerAsesorVal;
+    } else {
+        globalExplotacionNombre = '';
+        globalExplotacionContacto = '';
+        globalRabonFecha = '';
+        globalBayerAsesor = '';
+    }
+}
 
 function getRabonDose() {
 
@@ -693,27 +734,27 @@ function getRabonDose() {
     var resultRabon_08 = 0;
     var resultRabon_09 = 0;
 
-    var $txtExplotacionNombreVal = $('#txtExplotacionNombre').val().trim();
-    var $txtExplotacionContactoVal = $('#txtExplotacionContacto').val().trim();
-    var $txtRabonFechaVal = $('#txtRabonFecha').val().trim();
-    var $txtBayerAsesorVal = $('#txtBayerAsesor').val().trim();
+    //var $txtExplotacionNombreVal = $('#txtExplotacionNombre').val().trim();
+    //var $txtExplotacionContactoVal = $('#txtExplotacionContacto').val().trim();
+    //var $txtRabonFechaVal = $('#txtRabonFecha').val().trim();
+    //var $txtBayerAsesorVal = $('#txtBayerAsesor').val().trim();
     var $rabonNoAnimales = Number($('#rabonNoAnimales').val());
     var $rabonPesoAnimal = Number($('#rabonPesoAnimal').val());
     var $rabonPrecio = Number($('#rabonPrecio').val());
     var $rabonAlimentoFinal_Kg = Number($('#rabonAlimentoFinal-Kg').val());
     var $rabonSalComun_g = Number($('#rabonSalComun-g').val());
 
-    $('#reqTxtExplotacionNombre').css('display', 'none');
-    $('#reqTxtExplotacionContacto').css('display', 'none');
-    $('#reqTxtRabonFecha').css('display', 'none');
-    $('#reqTxtBayerAsesor').css('display', 'none');
+    //$('#reqTxtExplotacionNombre').css('display', 'none');
+    //$('#reqTxtExplotacionContacto').css('display', 'none');
+    //$('#reqTxtRabonFecha').css('display', 'none');
+    //$('#reqTxtBayerAsesor').css('display', 'none');
     $('#reqRabonNoAnimales').css('display', 'none');
     $('#reqRabonPesoAnimal').css('display', 'none');
     $('#reqRabonPrecio').css('display', 'none');
     $('#reqRabonAlimentoFinal-Kg').css('display', 'none');
     $('#reqRabonSalComun-g').css('display', 'none');
 
-    
+    /*
     if($txtExplotacionNombreVal == "") {
         $('#reqTxtExplotacionNombre').css('display', 'inline-block');
     } 
@@ -725,7 +766,7 @@ function getRabonDose() {
     } 
     if($txtBayerAsesorVal == "") {
         $('#reqTxtBayerAsesor').css('display', 'inline-block');
-    } 
+    } */
     if($rabonNoAnimales <= 0) {
         $('#reqRabonNoAnimales').css('display', 'inline-block');
     } 
@@ -740,45 +781,63 @@ function getRabonDose() {
     } 
     if($rabonSalComun_g <= 0) {
         $('#reqRabonSalComun-g').css('display', 'inline-block');
-    } 
+    }
 
-    if($txtExplotacionNombreVal != "" && $txtExplotacionContactoVal != "" && $txtRabonFechaVal != "" && $txtBayerAsesorVal != ""
-            && $rabonNoAnimales > 0 && $rabonPesoAnimal > 0 && $rabonPrecio > 0) {
+    if(globalExplotacionNombre != "" && globalExplotacionContacto != "" && globalRabonFecha != "" && globalBayerAsesor != "") {
 
-        resultRabon_01 = $rabonPesoAnimal * constDoseRabon;
+        if($rabonNoAnimales > 0 && $rabonPesoAnimal > 0 && $rabonPrecio > 0) {
 
-        $('#resultRabon-01').html('<b>' + resultRabon_01.toLocaleString('en-US') + ' mg </b>');
+            resultRabon_01 = $rabonPesoAnimal * constDoseRabon;
 
-        if($rabonAlimentoFinal_Kg > 0 && $rabonSalComun_g > 0) {
-            resultRabon_06 = (resultRabon_01 * $rabonNoAnimales)/1000;
-            resultRabon_04 = $rabonAlimentoFinal_Kg * $rabonNoAnimales;
-            resultRabon_05 = ($rabonSalComun_g * $rabonNoAnimales)/1000;
-            
-            resultRabon_02 = resultRabon_06/(resultRabon_04/1000);
-            resultRabon_03 = (resultRabon_06/(resultRabon_05/1000))/1000;
-            
-            resultRabon_07 = constWeightRabon / resultRabon_06;
+            $('#resultRabon-01').html('<b>' + resultRabon_01.toLocaleString('en-US') + ' mg </b>');
 
-            resultRabon_08 = resultRabon_07/30;
+            if($rabonAlimentoFinal_Kg > 0 && $rabonSalComun_g > 0) {
+                resultRabon_06 = (resultRabon_01 * $rabonNoAnimales)/1000;
+                resultRabon_04 = $rabonAlimentoFinal_Kg * $rabonNoAnimales;
+                resultRabon_05 = ($rabonSalComun_g * $rabonNoAnimales)/1000;
+                
+                resultRabon_02 = resultRabon_06/(resultRabon_04/1000);
+                resultRabon_03 = (resultRabon_06/(resultRabon_05/1000))/1000;
+                
+                resultRabon_07 = constWeightRabon / resultRabon_06;
 
-            resultRabon_09 = (($rabonPrecio/constWeightRabon) * resultRabon_06) / $rabonNoAnimales;
+                resultRabon_08 = resultRabon_07/30;
 
-            $('#resultRabon-02').html('<b>' + resultRabon_02.toLocaleString('en-US')+ ' g </b>');
-            $('#resultRabon-03').html('<b>' + resultRabon_03.toLocaleString('en-US') + ' kg </b>');
-            $('#resultRabon-04').html('<b>' + resultRabon_04.toLocaleString('en-US') + ' kg </b>');
-            $('#resultRabon-05').html('<b>' + resultRabon_05.toLocaleString('en-US') + ' kg </b>');
-            $('#resultRabon-06').html('<b>' + resultRabon_06.toLocaleString('en-US') + ' g </b>');
-            $('#resultRabon-07').html('<b>' + resultRabon_07.toLocaleString('en-US') + ' días </b>');
-            $('#resultRabon-08').html('<b>' + resultRabon_08.toLocaleString('en-US') + ' meses </b>');
-            $('#resultRabon-09').html('<b>$ ' + resultRabon_09.toLocaleString('en-US') + ' pesos </b>');
+                resultRabon_09 = (($rabonPrecio/constWeightRabon) * resultRabon_06) / $rabonNoAnimales;
 
-            globalResultRabon_02 = resultRabon_02;
-            globalRabonPrecio = $rabonPrecio;
-            globalRabonAlimentoFinal_Kg = $rabonAlimentoFinal_Kg;
-            globalRabonNoAnimales = $rabonNoAnimales;
+                $('#resultRabon-02').html('<b>' + resultRabon_02.toLocaleString('en-US')+ ' g </b>');
+                $('#resultRabon-03').html('<b>' + resultRabon_03.toLocaleString('en-US') + ' kg </b>');
+                $('#resultRabon-04').html('<b>' + resultRabon_04.toLocaleString('en-US') + ' kg </b>');
+                $('#resultRabon-05').html('<b>' + resultRabon_05.toLocaleString('en-US') + ' kg </b>');
+                $('#resultRabon-06').html('<b>' + resultRabon_06.toLocaleString('en-US') + ' g </b>');
+                $('#resultRabon-07').html('<b>' + resultRabon_07.toLocaleString('en-US') + ' días </b>');
+                $('#resultRabon-08').html('<b>' + resultRabon_08.toLocaleString('en-US') + ' meses </b>');
+                $('#resultRabon-09').html('<b>$ ' + resultRabon_09.toLocaleString('en-US') + ' pesos </b>');
 
+                globalResultRabon_02 = resultRabon_02;
+                globalRabonPrecio = $rabonPrecio;
+                globalRabonAlimentoFinal_Kg = $rabonAlimentoFinal_Kg;
+                globalRabonNoAnimales = $rabonNoAnimales;
+
+            }
+            else {
+                $('#resultRabon-02').html('');
+                $('#resultRabon-03').html('');
+                $('#resultRabon-04').html('');
+                $('#resultRabon-05').html('');
+                $('#resultRabon-06').html('');
+                $('#resultRabon-07').html('');
+                $('#resultRabon-08').html('');
+                $('#resultRabon-09').html('');
+
+                globalResultRabon_02 = 0;
+                globalRabonPrecio = 0;
+                globalRabonAlimentoFinal_Kg = 0;
+                globalRabonNoAnimales = 0;
+            }
         }
         else {
+            $('#resultRabon-01').html('');
             $('#resultRabon-02').html('');
             $('#resultRabon-03').html('');
             $('#resultRabon-04').html('');
@@ -793,8 +852,7 @@ function getRabonDose() {
             globalRabonAlimentoFinal_Kg = 0;
             globalRabonNoAnimales = 0;
         }
-    }
-    else {
+    } else {
         $('#resultRabon-01').html('');
         $('#resultRabon-02').html('');
         $('#resultRabon-03').html('');
@@ -809,9 +867,9 @@ function getRabonDose() {
         globalRabonPrecio = 0;
         globalRabonAlimentoFinal_Kg = 0;
         globalRabonNoAnimales = 0;
-    }
 
-    
+        alert('Debe ingresar los datos de la Explotación Pecuaria');
+    }
 }
 
 function getBeneficioCarne() {
@@ -821,22 +879,23 @@ function getBeneficioCarne() {
         resultRabonCarne_19, resultRabonCarne_20, resultRabonCarne_21, resultRabonCarne_22, resultRabonCarne_23, resultRabonCarne_24, 
         resultRabonCarne_25, resultRabonCarne_26;
     
-    var $txtCarneExplotacionNombreVal = $('#txtCarneExplotacionNombre').val().trim();
-    var $txtCarneExplotacionContactoVal = $('#txtCarneExplotacionContacto').val().trim();
-    var $txtCarneRabonFechaVal = $('#txtCarneRabonFecha').val().trim();
-    var $txtCarneBayerAsesorVal = $('#txtCarneBayerAsesor').val().trim();
+    //var $txtCarneExplotacionNombreVal = $('#txtCarneExplotacionNombre').val().trim();
+    //var $txtCarneExplotacionContactoVal = $('#txtCarneExplotacionContacto').val().trim();
+    //var $txtCarneRabonFechaVal = $('#txtCarneRabonFecha').val().trim();
+    //var $txtCarneBayerAsesorVal = $('#txtCarneBayerAsesor').val().trim();
     var $carnePerdidaGramosVal = Number($('#carnePerdidaGramos').val());
     var $carnePrecioMercadoVal = Number($('#carnePrecioMercado').val());
     var $carneDiasTratamientoVal = Number($('#carneDiasTratamiento').val());
     
-    $('#reqTxtCarneExplotacionNombre').css('display', 'none');
-    $('#reqTxtCarneExplotacionContacto').css('display', 'none');
-    $('#reqTxtCarneRabonFecha').css('display', 'none');
-    $('#reqTxtCarneBayerAsesor').css('display', 'none');
+    //$('#reqTxtCarneExplotacionNombre').css('display', 'none');
+    //$('#reqTxtCarneExplotacionContacto').css('display', 'none');
+    //$('#reqTxtCarneRabonFecha').css('display', 'none');
+    //$('#reqTxtCarneBayerAsesor').css('display', 'none');
     $('#reqCarnePerdidaGramos').css('display', 'none');
     $('#reqCarnePrecioMercado').css('display', 'none');
     $('#reqCarneDiasTratamiento').css('display', 'none');
 
+    /*
     if($txtCarneExplotacionNombreVal == "") {
         $('#reqTxtCarneExplotacionNombre').css('display', 'inline-block');
     } 
@@ -848,7 +907,7 @@ function getBeneficioCarne() {
     } 
     if($txtCarneBayerAsesorVal == "") {
         $('#reqTxtCarneBayerAsesor').css('display', 'inline-block');
-    }   
+    }*/
     if($carnePerdidaGramosVal <= 0) {
         $('#reqCarnePerdidaGramos').css('display', 'inline-block');
     } 
@@ -859,8 +918,7 @@ function getBeneficioCarne() {
         $('#reqCarneDiasTratamiento').css('display', 'inline-block');
     }
 
-    if($txtCarneExplotacionNombreVal != "" && $txtCarneExplotacionContactoVal != "" && $txtCarneRabonFechaVal != "" && $txtCarneBayerAsesorVal != ""
-        && $carnePerdidaGramosVal > 0 && $carnePrecioMercadoVal > 0 && $carneDiasTratamientoVal > 0) {
+    if($carnePerdidaGramosVal > 0 && $carnePrecioMercadoVal > 0 && $carneDiasTratamientoVal > 0) {
         
         if(globalResultRabon_02 > 0 && globalRabonPrecio > 0 && globalRabonAlimentoFinal_Kg > 0 && globalRabonNoAnimales > 0){
         
@@ -949,22 +1007,23 @@ function getBeneficioLeche() {
         resultRabonLeche_19, resultRabonLeche_20, resultRabonLeche_21, resultRabonLeche_22, resultRabonLeche_23, resultRabonLeche_24, 
         resultRabonLeche_25, resultRabonLeche_26;
     
-    var $txtLecheExplotacionNombreVal = $('#txtLecheExplotacionNombre').val().trim();
-    var $txtLecheExplotacionContactoVal = $('#txtLecheExplotacionContacto').val().trim();
-    var $txtLecheRabonFechaVal = $('#txtLecheRabonFecha').val().trim();
-    var $txtLecheBayerAsesorVal = $('#txtLecheBayerAsesor').val().trim();
+    //var $txtLecheExplotacionNombreVal = $('#txtLecheExplotacionNombre').val().trim();
+    //var $txtLecheExplotacionContactoVal = $('#txtLecheExplotacionContacto').val().trim();
+    //var $txtLecheRabonFechaVal = $('#txtLecheRabonFecha').val().trim();
+    //var $txtLecheBayerAsesorVal = $('#txtLecheBayerAsesor').val().trim();
     var $lechePerdidaLitrosVal = Number($('#lechePerdidaLitros').val());
     var $lechePrecioMercadoVal = Number($('#lechePrecioMercado').val());
     var $lecheDiasTratamientoVal = Number($('#lecheDiasTratamiento').val());
     
-    $('#reqTxtLecheExplotacionNombre').css('display', 'none');
-    $('#reqTxtLecheExplotacionContacto').css('display', 'none');
-    $('#reqTxtLecheRabonFecha').css('display', 'none');
-    $('#reqTxtLecheBayerAsesor').css('display', 'none');
+    //$('#reqTxtLecheExplotacionNombre').css('display', 'none');
+    //$('#reqTxtLecheExplotacionContacto').css('display', 'none');
+    //$('#reqTxtLecheRabonFecha').css('display', 'none');
+    //$('#reqTxtLecheBayerAsesor').css('display', 'none');
     $('#reqLechePerdidaLitros').css('display', 'none');
     $('#reqLechePrecioMercado').css('display', 'none');
     $('#reqLecheDiasTratamiento').css('display', 'none');
 
+    /*
     if($txtLecheExplotacionNombreVal == "") {
         $('#reqTxtLecheExplotacionNombre').css('display', 'inline-block');
     } 
@@ -976,7 +1035,7 @@ function getBeneficioLeche() {
     } 
     if($txtLecheBayerAsesorVal == "") {
         $('#reqTxtLecheBayerAsesor').css('display', 'inline-block');
-    }   
+    }*/
     if($lechePerdidaLitrosVal <= 0) {
         $('#reqLechePerdidaLitros').css('display', 'inline-block');
     } 
@@ -987,8 +1046,7 @@ function getBeneficioLeche() {
         $('#reqLecheDiasTratamiento').css('display', 'inline-block');
     }
 
-    if($txtLecheExplotacionNombreVal != "" && $txtLecheExplotacionContactoVal != "" && $txtLecheRabonFechaVal != "" && $txtLecheBayerAsesorVal != ""
-        && $lechePerdidaLitrosVal > 0 && $lechePrecioMercadoVal > 0 && $lecheDiasTratamientoVal > 0) {
+    if($lechePerdidaLitrosVal > 0 && $lechePrecioMercadoVal > 0 && $lecheDiasTratamientoVal > 0) {
         
         if(globalResultRabon_02 > 0 && globalRabonPrecio > 0 && globalRabonAlimentoFinal_Kg > 0 && globalRabonNoAnimales > 0){
         

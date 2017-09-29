@@ -26,15 +26,47 @@
             <div data-role="tabs" id="tabs">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="#one" data-ajax="false">Tabla de dosificación Rabón 97.3</a></li>
-                        <li><a href="#two" data-ajax="false">Costo - Beneficio. Ganado de carne</a></li>
-                        <li><a href="#three" data-ajax="false">Costo - Beneficio. Ganado de leche</a></li>
+                        <li><a href="#one" data-ajax="false">Datos de la explotación pecuaria</a></li>
+                        <li><a href="#two" data-ajax="false">Tabla de dosificación Rabón 97.3</a></li>
+                        <li><a href="#three" data-ajax="false">Costo - Beneficio. Ganado de carne</a></li>
+                        <li><a href="#four" data-ajax="false">Costo - Beneficio. Ganado de leche</a></li>
                     </ul>
                 </div>
                 <div id="one">
+                    <h2>Explotación pecuaria</h2>
+
+                    <table data-role="table" id="explotacion-pecuaria-table" data-mode="reflow" class="explotacion-pecuaria-table ui-responsive">
+                        <thead>
+                            <tr>
+                                <th data-priority="1">Nombre de la Explotación Pecuaria</th>
+                                <td><input data-clear-btn="true" required="true" name="txtExplotacionNombre" id="txtExplotacionNombre" value="" type="text" onchange="getExplotacionInfo()"></td>
+                                <td><span class="reqTxtExplotacionNombre" id="reqTxtExplotacionNombre">*</span></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Contacto en la Explotación Pecuaria</th>
+                                <td><input data-clear-btn="true" required="true" name="txtExplotacionContacto" id="txtExplotacionContacto" value="" type="text" onchange="getExplotacionInfo()"></td>
+                                <td><span class="reqTxtExplotacionContacto" id="reqTxtExplotacionContacto">*</span></td>
+                            </tr>
+                            <tr>
+                                <th>Fecha</th>
+                                <td><input data-clear-btn="true" required="true" name="txtRabonFecha" id="txtRabonFecha" value="" type="date" onchange="getExplotacionInfo()"></td>
+                                <td><span class="reqTxtRabonFecha" id="reqTxtRabonFecha">*</span></td>
+                            </tr>
+                            <tr>
+                                <th>Asesor Bayer</th>
+                                <td><input data-clear-btn="true" required="true" name="txtBayerAsesor" id="txtBayerAsesor" value="" type="text" onchange="getExplotacionInfo()"></td>
+                                <td><span class="reqTxtBayerAsesor" id="reqTxtBayerAsesor">*</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div id="two">
                     <h2>Tabla de dosificación Rabon 97.3</h2>
 
-                    <table data-role="table" id="rabon-general-table" data-mode="reflow" class="rabon-general ui-responsive">
+                    <!--<table data-role="table" id="rabon-general-table" data-mode="reflow" class="rabon-general ui-responsive">
                         <thead>
                             <tr>
                                 <th data-priority="1">Nombre de la Explotación Pecuaria</th>
@@ -60,6 +92,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    -->
 
                     <table id="tableRabonDose-1" class="tableRabonDose-1">
                         <tr>
@@ -175,9 +208,10 @@
                     </table>
                     
                 </div>
-                <div id="two">
+                <div id="three">
                     <h2>Costo - Beneficio. Ganado de carne</h2>
 
+                    <!--
                     <table data-role="table" id="carne-general-table" data-mode="reflow" class="carne-general-table ui-responsive">
                         <thead>
                             <tr>
@@ -204,8 +238,10 @@
                             </tr>
                         </tbody>
                     </table>
-
+                    
                     <br />
+
+                    -->
 
                     <table id="tableRabonCarne-1" class="tableRabonCarne-1">
                         <tr>
@@ -472,9 +508,10 @@
                     </table>
                     
                 </div>
-                <div id="three">
+                <div id="four">
                     <h2>Costo - Beneficio. Ganado de leche</h2>
 
+                    <!--
                     <table data-role="table" id="leche-general-table" data-mode="reflow" class="leche-general-table ui-responsive">
                         <thead>
                             <tr>
@@ -503,6 +540,7 @@
                     </table>
 
                     <br />
+                    -->
 
                     <table id="tableRabonLeche-1" class="tableRabonLeche-1">
                         <tr>

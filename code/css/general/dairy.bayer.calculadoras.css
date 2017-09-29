@@ -539,15 +539,44 @@
 
 /* DOSIFICACION RABON*/
 
+.explotacion-pecuaria-table thead th,
+.explotacion-pecuaria-table tbody tr:last-child {
+    border-bottom: 1px solid #d6d6d6;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.explotacion-pecuaria-table tbody th,
+.explotacion-pecuaria-table tbody td {
+    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.explotacion-pecuaria-table tbody tr:last-child th,
+.explotacion-pecuaria-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.explotacion-pecuaria-table tbody tr:nth-child(odd) td,
+.explotacion-pecuaria-table tbody tr:nth-child(odd) th {
+    background-color: #eeeeee;
+    background-color: rgba(0,0,0,.04);
+}
+
+.explotacion-pecuaria-table th {
+    width: 30%;
+}
+
+
+/*
 .rabon-general thead th,
 .rabon-general tbody tr:last-child {
-    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid #d6d6d6;
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .rabon-general tbody th,
 .rabon-general tbody td {
-    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid #e6e6e6;
     border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
@@ -558,13 +587,14 @@
 
 .rabon-general tbody tr:nth-child(odd) td,
 .rabon-general tbody tr:nth-child(odd) th {
-    background-color: #eeeeee; /* non-RGBA fallback  */
+    background-color: #eeeeee;
     background-color: rgba(0,0,0,.04);
 }
 
 .rabon-general th {
     width: 30%;
 }
+*/
 
 .reqTxtExplotacionNombre, .reqTxtExplotacionContacto, .reqTxtRabonFecha, .reqTxtBayerAsesor {
     display: inline-block;
@@ -651,15 +681,16 @@
 
 /* COSTO BENEFICIO GANADO DE CARNE*/
 
+/*
 .carne-general-table thead th,
 .carne-general-table tbody tr:last-child {
-    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid #d6d6d6;
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .carne-general-table tbody th,
 .carne-general-table tbody td {
-    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid #e6e6e6;
     border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
@@ -670,7 +701,7 @@
 
 .carne-general-table tbody tr:nth-child(odd) td,
 .carne-general-table tbody tr:nth-child(odd) th {
-    background-color: #eeeeee; /* non-RGBA fallback  */
+    background-color: #eeeeee;
     background-color: rgba(0,0,0,.04);
 }
 
@@ -684,6 +715,7 @@
     font-size: xx-large;
     color: #e32;
 }
+*/
 
 .tableRabonCarne-1 {
     font-family: Calibri;
@@ -869,15 +901,16 @@
 
 /* COSTO BENEFICIO GANADO DE LECHE*/
 
+/*
 .leche-general-table thead th,
 .leche-general-table tbody tr:last-child {
-    border-bottom: 1px solid #d6d6d6; /* non-RGBA fallback */
+    border-bottom: 1px solid #d6d6d6;
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
 
 .leche-general-table tbody th,
 .leche-general-table tbody td {
-    border-bottom: 1px solid #e6e6e6; /* non-RGBA fallback  */
+    border-bottom: 1px solid #e6e6e6;
     border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
@@ -888,7 +921,7 @@
 
 .leche-general-table tbody tr:nth-child(odd) td,
 .leche-general-table tbody tr:nth-child(odd) th {
-    background-color: #eeeeee; /* non-RGBA fallback  */
+    background-color: #eeeeee;
     background-color: rgba(0,0,0,.04);
 }
 
@@ -902,6 +935,7 @@
     font-size: xx-large;
     color: #e32;
 }
+*/
 
 .tableRabonLeche-1 {
     font-family: Calibri;
